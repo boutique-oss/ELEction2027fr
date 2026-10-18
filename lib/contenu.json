@@ -1,0 +1,394 @@
+{
+ "fiches": [
+  {
+   "liens": [
+    {
+     "titre": "Insee : comptes publics",
+     "url": "https://www.insee.fr/fr/statistiques/serie/001694257"
+    },
+    {
+     "titre": "Crésus : Dette, déficits, faillite",
+     "url": "https://www.youtube.com/watch?v=lx9JGfPlICQ"
+    }
+   ],
+   "titre": "Dette et déficit",
+   "texte": [
+    "Le déficit, c'est l'écart sur une année entre ce que l'État dépense et ce qu'il encaisse. La dette, c'est le cumul de tous les déficits passés.",
+    "Fin 2024 (Insee) : 3 305 Md€ de dette publique, soit 113 % du PIB. Déficit 2024 : 5,8 % du PIB, près de 170 Md€ empruntés en un an.",
+    "Effet boule de neige : si le déficit dépasse la croissance, la dette rapportée au PIB monte. Les intérêts montent aussi, ce qui creuse encore le déficit.",
+    "Stabiliser la dette demanderait de ramener le déficit vers 2 % du PIB : environ 120 Md€ d'efforts par an, en impôts ou en économies."
+   ],
+   "sous": "Le stock, le flux et la boule de neige",
+   "couleur": "255,159,10",
+   "icone": "📈"
+  },
+  {
+   "liens": [
+    {
+     "titre": "vie-publique.fr : la loi de finances",
+     "url": "https://www.vie-publique.fr/fiches/21887-quest-ce-quune-loi-de-finances"
+    }
+   ],
+   "titre": "Le budget de l'État",
+   "texte": [
+    "Chaque automne, le gouvernement dépose deux textes : le projet de loi de finances (impôts, ministères) et celui de la Sécurité sociale (santé, retraites, famille).",
+    "Le Parlement a 70 jours pour voter la loi de finances (50 pour la Sécu). Sinon, le gouvernement peut l'appliquer par ordonnance.",
+    "L'article 49.3 permet d'adopter un texte sans vote, sauf si une motion de censure fait tomber le gouvernement.",
+    "Le Conseil constitutionnel peut censurer des articles. Le Haut Conseil des finances publiques donne son avis sur la crédibilité des prévisions."
+   ],
+   "sous": "Qui le prépare, qui le vote",
+   "couleur": "10,132,255",
+   "icone": "📄"
+  },
+  {
+   "liens": [
+    {
+     "titre": "Crésus : Dette, déficits, faillite",
+     "url": "https://www.youtube.com/watch?v=lx9JGfPlICQ"
+    },
+    {
+     "titre": "Crésus : Une France en faillite avant 2027 ?",
+     "url": "https://www.youtube.com/watch?v=WsgeYWlNJzA"
+    }
+   ],
+   "titre": "Austérité et croissance",
+   "texte": [
+    "Couper 1 € de dépense publique fait aussi baisser l'activité. L'ampleur de cette baisse s'appelle le multiplicateur budgétaire.",
+    "Le gouvernement retient environ 0,5. En 2013, le FMI (étude d'Olivier Blanchard) a reconnu qu'en crise, il dépassait souvent 1.",
+    "Grèce 2010-2013 : malgré l'austérité, le déficit n'a presque pas baissé et le PIB a chuté d'environ 25 %.",
+    "Toutes les économies ne pèsent pas pareil : reculer l'âge de départ freine peu la croissance, couper l'investissement la freine beaucoup."
+   ],
+   "sous": "Le multiplicateur budgétaire",
+   "couleur": "255,69,58",
+   "icone": "⚠️"
+  },
+  {
+   "liens": [
+    {
+     "titre": "Crésus : le programme des centristes",
+     "url": "https://www.youtube.com/watch?v=AtaAHCl5VF0"
+    },
+    {
+     "titre": "info-retraite.fr",
+     "url": "https://www.info-retraite.fr"
+    }
+   ],
+   "titre": "Les retraites",
+   "texte": [
+    "Système par répartition : les cotisations des actifs d'aujourd'hui paient les pensions des retraités d'aujourd'hui. Elles représentent près de 14 % du PIB.",
+    "La réforme de 2023 a reporté l'âge légal de 62 à 64 ans. Elle reste au cœur de la campagne : LFI et le PCF proposent 60 ans, d'autres veulent aller au-delà de 64.",
+    "Retraite par points (proposée par Renaissance) : chaque euro cotisé donne des points, et la pension dépend de toute la carrière.",
+    "Les leviers sont toujours les mêmes : l'âge de départ, le niveau des pensions, les cotisations, ou le déficit."
+   ],
+   "sous": "Répartition, âge légal, points",
+   "couleur": "48,209,88",
+   "icone": "⏳"
+  },
+  {
+   "liens": [
+    {
+     "titre": "France Stratégie : évaluation du CICE",
+     "url": "https://www.strategie.gouv.fr/publications/evaluation-credit-dimpot-competitivite-lemploi-synthese-travaux-dapprofondissement"
+    }
+   ],
+   "titre": "Offre ou demande ?",
+   "texte": [
+    "Politique de l'offre : baisser les impôts et les coûts des entreprises pour qu'elles investissent et embauchent (baisse des impôts de production, CICE).",
+    "Politique de la demande : augmenter les revenus (salaires, aides) pour soutenir la consommation (hausse du SMIC, blocage des prix).",
+    "Exemple : le CICE a coûté environ 20 Md€ par an. Les évaluations publiques lui attribuent environ 100 000 emplois, jugés peu au regard du coût.",
+    "La plupart des programmes mélangent les deux. La vraie question est leur financement."
+   ],
+   "sous": "Deux façons de relancer l'économie",
+   "couleur": "191,90,242",
+   "icone": "💳"
+  },
+  {
+   "liens": [
+    {
+     "titre": "BCE : notre politique monétaire",
+     "url": "https://www.ecb.europa.eu/mopo/html/index.fr.html"
+    },
+    {
+     "titre": "Crésus : le programme de LFI",
+     "url": "https://www.youtube.com/watch?v=_PcDNjqiYtk"
+    }
+   ],
+   "titre": "L'euro, la BCE et les taux",
+   "texte": [
+    "La Banque centrale européenne fixe les taux directeurs de la zone euro. Elle est indépendante : aucun gouvernement ne peut lui donner d'ordre.",
+    "La France emprunte sur les marchés. Si les prêteurs doutent, ils exigent des taux plus élevés, et la charge de la dette augmente.",
+    "Depuis 2022, la BCE peut acheter la dette d'un pays attaqué sur les marchés, mais sous conditions de discipline budgétaire.",
+    "D'où un débat central : un programme qui creuse fortement le déficit doit négocier avec Bruxelles et Francfort, ou entrer en conflit avec eux."
+   ],
+   "sous": "Pourquoi Francfort compte autant",
+   "couleur": "100,210,255",
+   "icone": "🏦"
+  },
+  {
+   "liens": [
+    {
+     "titre": "Vérifier mon inscription",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE"
+    },
+    {
+     "titre": "maprocuration.gouv.fr",
+     "url": "https://www.maprocuration.gouv.fr"
+    }
+   ],
+   "titre": "Comment on vote en 2027",
+   "texte": [
+    "1er tour le dimanche 18 avril 2027, 2nd tour le 2 mai entre les deux premiers, sauf si l'un a plus de 50 % dès le 1er tour.",
+    "Pour se présenter, il faut 500 parrainages d'élus (maires, parlementaires…) venant d'au moins 30 départements.",
+    "Inscription sur les listes électorales : en ligne jusqu'au 10 mars 2027, en mairie jusqu'au 12 mars.",
+    "Absent le jour du vote ? La procuration se demande en ligne sur maprocuration.gouv.fr, puis se valide au commissariat ou à la gendarmerie."
+   ],
+   "sous": "Dates, inscription, procuration",
+   "couleur": "0,85,164",
+   "icone": "🗳️"
+  },
+  {
+   "liens": [
+    {
+     "titre": "Sondax : tous les candidats",
+     "url": "https://sondax.fr/candidats/"
+    }
+   ],
+   "titre": "Gauche, centre, droite",
+   "texte": [
+    "Gauche radicale et écologiste : LFI (Mélenchon), Les Écologistes (Tondelier), PCF (Roussel), Lutte ouvrière (Arthaud).",
+    "Gauche sociale-démocrate : Place publique (Glucksmann), PS (Hollande ou un autre candidat).",
+    "Bloc central : Renaissance (Attal), Horizons (Philippe), MoDem.",
+    "Droite : Les Républicains (Retailleau). Droite nationaliste, souvent dite extrême droite : RN (Le Pen ou Bardella), Reconquête (Zemmour), Debout la France (Dupont-Aignan)."
+   ],
+   "sous": "Les grands blocs de 2027",
+   "couleur": "142,142,147",
+   "icone": "👥"
+  }
+ ],
+ "MAJ": "17 octobre 2026",
+ "medias": {
+  "leparisien.fr": "Le Parisien",
+  "lemonde.fr": "Le Monde",
+  "lefigaro.fr": "Le Figaro",
+  "lesechos.fr": "Les Échos",
+  "challenges.fr": "Challenges",
+  "franceinter.fr": "France Inter",
+  "latribune.fr": "La Tribune",
+  "la-croix.com": "La Croix",
+  "euronews.com": "Euronews",
+  "politico.eu": "Politico",
+  "lcp.fr": "LCP",
+  "lepoint.fr": "Le Point",
+  "afp.com": "AFP",
+  "sudouest.fr": "Sud Ouest",
+  "letelegramme.fr": "Le Télégramme",
+  "lexpress.fr": "L'Express",
+  "radiofrance.fr": "Radio France",
+  "francetvinfo.fr": "franceinfo",
+  "rtl.fr": "RTL",
+  "reuters.com": "Reuters",
+  "lejdd.fr": "Le JDD",
+  "lanouvellerepublique.fr": "La Nouvelle République",
+  "europe1.fr": "Europe 1",
+  "lavoixdunord.fr": "La Voix du Nord",
+  "bfmtv.com": "BFMTV",
+  "lopinion.fr": "L'Opinion",
+  "tf1info.fr": "TF1 Info",
+  "mediapart.fr": "Mediapart",
+  "huffingtonpost.fr": "HuffPost",
+  "ouest-france.fr": "Ouest-France",
+  "marianne.net": "Marianne",
+  "publicsenat.fr": "Public Sénat",
+  "ladepeche.fr": "La Dépêche",
+  "humanite.fr": "L'Humanité",
+  "nouvelobs.com": "L'Obs",
+  "rfi.fr": "RFI",
+  "20minutes.fr": "20 Minutes",
+  "liberation.fr": "Libération",
+  "france24.com": "France 24",
+  "franceinfo.fr": "franceinfo"
+ },
+ "NOTE_CRESUS": "Crésus est un vidéaste finance. Il a annoncé voter Mélenchon « par calcul » (pour hâter une crise budgétaire), pas par adhésion : ses analyses restent une opinion.",
+ "programmes": {
+  "villepin": {
+   "points": [
+    "Diplomatie indépendante (opposé à la guerre d'Irak en 2003 à l'ONU).",
+    "Ligne sociale et républicaine, au-delà du clivage gauche-droite."
+   ],
+   "ligne": "Gaullisme social (La France humaniste). Premier ministre de 2005 à 2007."
+  },
+  "glucksmann": {
+   "ligne": "Gauche sociale-démocrate et pro-européenne (Place publique).",
+   "site": "https://place-publique.eu",
+   "points": [
+    "Europe fédérale : budget de l'UE porté jusqu'à 5 % du PIB, nouveau traité d'ici 2030.",
+    "Initiative législative au Parlement européen, initiatives citoyennes européennes facilitées.",
+    "Programme social et écologique ambitieux (88 pages), présenté comme une « vision » plutôt qu'un catalogue chiffré."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme des centristes ?",
+    "url": "https://www.youtube.com/watch?v=AtaAHCl5VF0"
+   },
+   "cresus": "Selon Crésus : programme de gauche sur le papier, mais sans conflit avec Bruxelles. Au pouvoir, il appliquerait donc à peu près la même politique budgétaire que les centristes."
+  },
+  "melenchon": {
+   "video2": {
+    "titre": "Pourquoi je vais voter pour Jean-Luc Mélenchon",
+    "url": "https://www.youtube.com/watch?v=ENjeI4s6Lx0"
+   },
+   "ligne": "Gauche radicale. Programme « L'Avenir en commun » : redistribution et planification écologique.",
+   "site": "https://melenchon2027.fr",
+   "points": [
+    "Salaires : SMIC à 1 600 € net, hausse d'environ 10 % du point d'indice des fonctionnaires.",
+    "Retraites : départ à 60 ans avec 40 annuités, petites pensions relevées au niveau du SMIC.",
+    "Vie chère : blocage des prix de première nécessité, premiers volumes d'eau et d'énergie gratuits, garantie d'autonomie pour les jeunes.",
+    "Écologie et logement : plan de bifurcation écologique (≈ 200 Md€ sur le mandat), 200 000 logements publics par an.",
+    "Financement : ISF climatique, impôt plus progressif, héritages plafonnés (au-delà de 12 M€ taxés à 100 %)."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme de LFI ?",
+    "url": "https://www.youtube.com/watch?v=_PcDNjqiYtk"
+   },
+   "cresus": "Selon Crésus : près de 300 Md€ de dépenses par an pour environ 180 Md€ de recettes. Il prévoit un bras de fer avec la BCE et les marchés sur le déficit."
+  },
+  "hollande": {
+   "ligne": "Gauche sociale-démocrate (PS). Président de la République de 2012 à 2017.",
+   "site": "https://www.parti-socialiste.fr",
+   "points": [
+    "Ligne social-démocrate, attachée au sérieux budgétaire et à l'Europe.",
+    "Bilan : CICE (baisse du coût du travail), réforme Touraine des retraites, mariage pour tous."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme du RN ? (passage sur le CICE)",
+    "url": "https://www.youtube.com/watch?v=vtb-jGwGrd8"
+   },
+   "cresus": "Selon Crésus : le CICE a coûté environ 20 Md€ par an pour un nombre d'emplois créés jugé faible."
+  },
+  "dupont-aignan": {
+   "points": [
+    "Europe des nations plutôt qu'Europe fédérale, primauté du droit national.",
+    "Recours fréquent au référendum.",
+    "Immigration réduite, priorité à la sécurité."
+   ],
+   "ligne": "Droite souverainiste (Debout la France).",
+   "site": "https://www.debout-la-france.fr"
+  },
+  "arthaud": {
+   "points": [
+    "Interdiction des licenciements, partage du travail entre tous.",
+    "Hausse générale des salaires et des pensions.",
+    "Contrôle des travailleurs sur les comptes des entreprises."
+   ],
+   "ligne": "Extrême gauche révolutionnaire (Lutte ouvrière).",
+   "site": "https://www.lutte-ouvriere.org"
+  },
+  "bardella": {
+   "ligne": "Droite nationaliste. Priorité à la sécurité, à l'immigration et au pouvoir d'achat.",
+   "site": "https://rassemblementnational.fr",
+   "points": [
+    "Sécurité : 30 000 places de prison en plus, budgets Justice, Intérieur et Défense (3 % du PIB) en hausse.",
+    "Immigration : référendum pour inscrire la « souveraineté migratoire » dans la Constitution, fin du droit du sol, aides non contributives réservées.",
+    "Pouvoir d'achat : TVA à 5,5 % sur l'énergie et les carburants, baisse des cotisations sur les bas salaires.",
+    "Économie : baisse des impôts de production, relance du nucléaire, privatisation de l'audiovisuel public."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme du RN ?",
+    "url": "https://www.youtube.com/watch?v=vtb-jGwGrd8"
+   },
+   "cresus": "Selon Crésus : environ 120 Md€ de dépenses pour 90 Md€ d'économies. Pour lui, la contrainte budgétaire européenne bloquerait les mesures coûteuses ; seules celles sans coût (immigration, audiovisuel) passeraient."
+  },
+  "roussel": {
+   "ligne": "Gauche communiste (PCF), « gauche du travail ».",
+   "site": "https://www.pcf.fr",
+   "points": [
+    "Salaires et emploi : hausse des salaires, réindustrialisation.",
+    "Énergie : nucléaire et renouvelables dans un pôle public de l'énergie.",
+    "Retraites : retour à un départ à 60 ans."
+   ],
+   "video": {
+    "titre": "Crésus × Padu : un projet communiste peut-il sauver le pays ?",
+    "url": "https://www.youtube.com/watch?v=Sv_QFQFIl7c"
+   }
+  },
+  "retailleau": {
+   "ligne": "Droite (Les Républicains). Ancien ministre de l'Intérieur, ligne d'ordre et de rigueur.",
+   "site": "https://republicains.fr",
+   "points": [
+    "Immigration : durcissement des conditions d'entrée et de séjour, recours au référendum.",
+    "Sécurité et justice : fermeté pénale, moyens accrus pour la police.",
+    "Finances : baisse de la dépense publique, non-remplacement de fonctionnaires partant à la retraite."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme du RN ? (volet union des droites)",
+    "url": "https://www.youtube.com/watch?v=vtb-jGwGrd8"
+   },
+   "cresus": "Crésus cite la piste LR de 200 000 postes de fonctionnaires en moins (≈ 9 Md€ par an d'économies)."
+  },
+  "attal": {
+   "ligne": "Centre (Renaissance). Ancien Premier ministre, dans la continuité d'Emmanuel Macron.",
+   "site": "https://parti-renaissance.fr",
+   "points": [
+    "Retraites : passage à un système universel par points (chaque euro cotisé donne des droits), fusion des régimes.",
+    "Toute la carrière compte pour la pension, et non plus les 25 meilleures années.",
+    "Ligne pro-européenne et réduction du déficit."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme des centristes ?",
+    "url": "https://www.youtube.com/watch?v=AtaAHCl5VF0"
+   },
+   "cresus": "Selon Crésus : réforme réaliste (le modèle existe ailleurs). Les carrières complètes et stables y gagnent ; les régimes spéciaux et les carrières hachées y perdent."
+  },
+  "philippe": {
+   "ligne": "Centre droit (Horizons). Ancien Premier ministre, priorité au redressement des comptes publics.",
+   "site": "https://horizonsleparti.fr",
+   "points": [
+    "« Grand deal fiscal » : 50 Md€ par an de baisse des impôts de production, compensés par 50 Md€ d'aides aux entreprises en moins.",
+    "Mesure présentée comme neutre pour le déficit (≈ 250 Md€ redistribués sur le mandat).",
+    "Ligne pro-européenne et réduction progressive du déficit."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme des centristes ?",
+    "url": "https://www.youtube.com/watch?v=AtaAHCl5VF0"
+   },
+   "cresus": "Selon Crésus : si les « aides » supprimées sont les allégements de cotisations sur les bas salaires, le coût du travail au SMIC bondirait. Les petites entreprises seraient alors fragilisées."
+  },
+  "le-pen": {
+   "ligne": "Droite nationaliste. Priorité à la sécurité, à l'immigration et au pouvoir d'achat.",
+   "site": "https://rassemblementnational.fr",
+   "points": [
+    "Sécurité : 30 000 places de prison en plus, budgets Justice, Intérieur et Défense (3 % du PIB) en hausse.",
+    "Immigration : référendum pour inscrire la « souveraineté migratoire » dans la Constitution, fin du droit du sol, aides non contributives réservées.",
+    "Pouvoir d'achat : TVA à 5,5 % sur l'énergie et les carburants, baisse des cotisations sur les bas salaires.",
+    "Économie : baisse des impôts de production, relance du nucléaire, privatisation de l'audiovisuel public."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme du RN ?",
+    "url": "https://www.youtube.com/watch?v=vtb-jGwGrd8"
+   },
+   "cresus": "Selon Crésus : environ 120 Md€ de dépenses pour 90 Md€ d'économies. Pour lui, la contrainte budgétaire européenne bloquerait les mesures coûteuses ; seules celles sans coût (immigration, audiovisuel) passeraient."
+  },
+  "zemmour": {
+   "ligne": "Droite identitaire (Reconquête).",
+   "site": "https://www.parti-reconquete.fr",
+   "points": [
+    "Immigration : arrêt de l'immigration et fin du droit du sol, au cœur du programme.",
+    "Identité : défense de « l'identité française », assimilation.",
+    "Économie : fortes baisses d'impôts sur les entreprises."
+   ],
+   "video": {
+    "titre": "Et si on appliquait le programme du RN ? (volet union des droites)",
+    "url": "https://www.youtube.com/watch?v=vtb-jGwGrd8"
+   },
+   "cresus": "Selon Crésus : jusqu'à 28 Md€ de baisse des impôts de production, la plus forte proposée."
+  },
+  "tondelier": {
+   "points": [
+    "Transition écologique planifiée : sortie des énergies fossiles, rénovation des logements, transports.",
+    "Fiscalité : contribution des plus hauts patrimoines (ISF climatique).",
+    "Social : hausse des bas salaires, retour sur la réforme des retraites de 2023."
+   ],
+   "ligne": "Écologie politique (Les Écologistes), à gauche.",
+   "site": "https://lesecologistes.fr"
+  }
+ }
+}
