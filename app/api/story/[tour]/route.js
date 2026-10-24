@@ -56,6 +56,20 @@ export async function GET(req, { params }) {
   const fonts = await polices;
   const dateTxt = `Au ${p.jour} ${MOIS_LONG[p.mois - 1]} ${p.an}`;
 
+  // décomptes en haut à droite : fin de campagne (veille du vote à minuit) et jour du vote
+  const now = Date.now();
+  const deuxieme = now > Date.parse('2027-04-18T22:00:00+02:00');
+  const restant = (cible) => {
+    const s = (cible - now) / 1000;
+    if (s <= 0) return ['—', ''];
+    const j = Math.floor(s / 86400);
+    return j >= 1 ? [String(j), j > 1 ? 'jours' : 'jour'] : [`${Math.floor(s / 3600)} h`, ''];
+  };
+  const [fn, fu] = restant(Date.parse(deuxieme ? '2027-04-30T23:59:59+02:00' : '2027-04-16T23:59:59+02:00'));
+  const [vn, vu] = restant(Date.parse(deuxieme ? '2027-05-02T08:00:00+02:00' : '2027-04-18T08:00:00+02:00'));
+  const decomptes = now > Date.parse('2027-05-02T22:00:00+02:00') ? []
+    : [{ lab: 'FIN DE CAMPAGNE', n: fn, u: fu }, { lab: 'JOUR DU VOTE', n: vn, u: vu }];
+
   let corps, sous, sources;
   if (t === 1) {
     sous = mode === 'dernier' ? `Intentions de vote : ${r.sous}.`
@@ -143,6 +157,17 @@ export async function GET(req, { params }) {
             <div style={{ display: 'flex', fontSize: 30, fontWeight: 600, color: GRIS, letterSpacing: 1 }}>PRÉSIDENTIELLE 2027</div>
             <div style={{ display: 'flex', fontSize: 28, color: MUET }}>{dateTxt}</div>
           </div>
+          <div style={{ display: 'flex', flexGrow: 1 }} />
+          {decomptes.map((d, k) => (
+            <div key={k} style={{ display: 'flex', flexDirection: 'column', width: 222, height: 86, marginLeft: 12, padding: '10px 16px',
+              borderRadius: 20, background: 'rgba(255,255,255,0.07)', border: k === 0 ? '2.5px solid rgba(255,159,10,0.8)' : '2.5px solid transparent' }}>
+              <div style={{ display: 'flex', fontSize: 16, fontWeight: 700, whiteSpace: 'nowrap', color: k === 0 ? '#ff9f0a' : GRIS }}>{d.lab}</div>
+              <div style={{ display: 'flex', alignItems: 'baseline' }}>
+                <div style={{ display: 'flex', fontSize: 38, fontWeight: 700, color: BLANC }}>{d.n}</div>
+                <div style={{ display: 'flex', fontSize: 20, fontWeight: 600, color: GRIS, marginLeft: 8 }}>{d.u}</div>
+              </div>
+            </div>
+          ))}
         </div>
         <div style={{ display: 'flex', fontSize: 76, fontWeight: 700, marginTop: 40 }}>{t === 1 ? '1er tour' : '2nd tour'}</div>
         <div style={{ display: 'flex', fontSize: 31, color: GRIS, marginTop: 10, marginBottom: 34, lineHeight: 1.3 }}>{sous}</div>
