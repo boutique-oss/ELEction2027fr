@@ -1,6 +1,8 @@
 // GET /api/story/1 ou /api/story/2 : story Instagram 1080 x 1920 (PNG) avec ses sources.
-// Option ?mode=dernier pour le dernier sondage seul, ?pseudo=@moncompte pour signer l'image.
+// Option ?mode=dernier pour le dernier sondage seul, ?pseudo=@moncompte pour signer l'image,
+// ?format=jpg pour Instagram (l'API de publication de Meta n'accepte que le JPEG).
 import { ImageResponse } from 'next/og';
+import sharp from 'sharp';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { chargerSondages, resume, REGLAGES } from '@/lib/sondages';
@@ -161,7 +163,13 @@ export async function GET(req, { params }) {
     ),
     { width: 1080, height: 1920, fonts },
   );
-  image.headers.set('Content-Disposition', `inline; filename="story-${t === 1 ? '1er' : '2nd'}-tour-${auj}.png"`);
+  const nom = `story-${t === 1 ? '1er' : '2nd'}-tour-${auj}`;
+  if (q.get('format') === 'jpg') {
+    const jpg = await sharp(Buffer.from(await image.arrayBuffer())).jpeg({ quality: 92, chromaSubsampling: '4:4:4' }).toBuffer();
+    return new Response(jpg, { headers: { 'Content-Type': 'image/jpeg', 'Content-Disposition': `inline; filename="${nom}.jpg"`,
+      'Cache-Control': 's-maxage=900, stale-while-revalidate=3600' } });
+  }
+  image.headers.set('Content-Disposition', `inline; filename="${nom}.png"`);
   image.headers.set('Cache-Control', 's-maxage=900, stale-while-revalidate=3600');
   return image;
 }

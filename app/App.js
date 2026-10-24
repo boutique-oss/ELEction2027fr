@@ -16,6 +16,10 @@ const URL = {
 };
 
 const rgb = (c) => `rgb(${c})`;
+const FAMILLES = { independant: 'Indépendant', public: 'Service public', nonlucratif: 'Non lucratif' };
+const COULEURS = { 'le-pen': '24,62,150', bardella: '24,62,150', melenchon: '204,36,67', philippe: '30,150,215', glucksmann: '226,74,134',
+  retailleau: '0,92,190', lisnard: '0,92,190', attal: '255,196,0', zemmour: '72,72,110', knafo: '72,72,110', tondelier: '22,163,74',
+  roussel: '214,24,24', hollande: '236,72,104', ruffin: '236,72,104', arthaud: '150,20,20', 'dupont-aignan': '0,130,196', villepin: '130,96,176' };
 const v = (x) => String(x).replace('.', ',');
 const fmtDate = (t, o) => new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', ...o }).format(new Date(t));
 const jourMois = (t) => fmtDate(t, { day: 'numeric', month: 'short' });
@@ -44,25 +48,61 @@ function Evolution({ e }) {
   return <div className={`tr ${e > 0 ? 'up' : 'down'}`}>{e > 0 ? '↑ +' : '↓ −'}{v(Math.abs(e).toFixed(1))}</div>;
 }
 
-// ------------------------------------------------------------------ compte à rebours
-function CompteARebours() {
+// ------------------------------------------------------------------ décomptes
+// La campagne officielle se termine la veille du vote à minuit (vendredi 23 h 59).
+const FIN1 = Date.parse('2027-04-16T23:59:59+02:00');
+const FIN2 = Date.parse('2027-04-30T23:59:59+02:00');
+const CAMPAGNE = Date.parse('2027-04-05T00:00:00+02:00');
+
+function duree(ms) {
+  const s = Math.max(0, ms / 1000);
+  const j = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
+  return j > 0 ? [j, j > 1 ? 'jours' : 'jour'] : [`${h} h`, `${String(m).padStart(2, '0')} min`];
+}
+
+function Decomptes() {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => { const i = setInterval(() => setNow(Date.now()), 30000); return () => clearInterval(i); }, []);
-  const cible = now > TOUR1 + 12 * 3600e3 ? TOUR2 : TOUR1;
-  const quoi = cible === TOUR1 ? '1er tour' : '2nd tour';
-  const s = Math.max(0, (cible - now) / 1000);
-  const j = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
+  const deuxieme = now > TOUR1 + 14 * 3600e3;
+  const vote = deuxieme ? TOUR2 : TOUR1;
+  const fin = deuxieme ? FIN2 : FIN1;
+  const close = now > fin;
+  const [nf, uf] = duree(fin - now), [nv, uv] = duree(vote - now);
+  // étapes à venir, à intervalles réguliers (les dates réelles sont trop serrées en fin de parcours)
+  const etapes = [['Auj.', jourMois(now)], ['Inscr.', '10 mars', INSCRIPTION], ['Campagne', '5 avr.', CAMPAGNE],
+    ['1er tour', '18 avr.', TOUR1], ['2nd tour', '2 mai', TOUR2]].filter((e, k) => k === 0 || e[2] > now);
+  const n = etapes.length;
   return (
-    <div className="hero">
-      <div className="g">
-        <div className="n" suppressHydrationWarning>{j > 0 ? j : `${h} h`}<small>{j > 0 ? (j > 1 ? 'jours' : 'jour') : `${m} min`}</small></div>
-        <div className="s" suppressHydrationWarning>{j > 0 ? `${h} h ${String(m).padStart(2, '0')} min avant le ` : 'avant le '}{quoi} · {fmtDate(cible, { weekday: 'short', day: 'numeric', month: 'long' })}</div>
+    <section className="decomptes">
+      <div className="duo">
+        <div className="dc fin">
+          <div className="lab">Fin de campagne</div>
+          {close ? <div className="n">Close</div>
+            : <div className="n" suppressHydrationWarning>{nf}<small>{uf}</small></div>}
+          <div className="d">{deuxieme ? 'ven. 30 avril, minuit' : 'ven. 16 avril, minuit'}</div>
+        </div>
+        <div className="dc">
+          <div className="lab">Jour du vote</div>
+          <div className="n" suppressHydrationWarning>{nv}<small>{uv}</small></div>
+          <div className="d">{deuxieme ? 'dim. 2 mai · 2nd tour' : 'dim. 18 avril · 1er tour'}</div>
+        </div>
       </div>
+      {n > 1 ? (
+        <div className="frise" style={{ '--n': n }}>
+          <div className="rail">
+            <div className="fait" style={{ width: `${50 / n}%` }} />
+            {etapes.map((e, k) => (
+              <div key={e[0]} className={`pt${k === 0 ? ' auj' : ''}${e[0] === 'Campagne' ? ' campagne' : ''}`} style={{ left: `${((k + 0.5) / n) * 100}%` }} />
+            ))}
+          </div>
+          <div className="jalons">{etapes.map((e) => <span key={e[0]}><b>{e[0]}</b>{e[1]}</span>)}</div>
+        </div>
+      ) : null}
       <div className="puces">
         <Lien className="puce" href={URL.inscription}>{now < INSCRIPTION ? 'Inscription · 10 mars' : 'Mon inscription'} <Ext /></Lien>
         <Lien className="puce" href={URL.procuration}>Procuration <Ext /></Lien>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -124,23 +164,37 @@ function Actu({ a, sous, filtre }) {
   if (filtre) infos = infos.filter((i) => i.candidats.includes(filtre.id));
   if (!infos.length) return <div className="vide">{filtre ? `Aucune info récente sur ${filtre.nom}.` : 'Aucune info pour l\'instant.'}</div>;
   return (
-    <div className="liste">
-      {infos.map((i, k) => {
-        const id = i.candidats[0];
-        return (
-          <Lien key={k} href={i.lien} className="ligne">
-            {id ? <Icone photo={`/photos/${id}.png`} couleur={i.important ? '255,159,10' : '128,128,136'} />
-              : <span className="ic" style={i.important ? { background: 'var(--alerte)', color: '#fff' } : undefined}>{initiales(i.media)}</span>}
-            <div className="mid">
-              <div className="nom deux">{i.titre}</div>
-              <div className={`sousl ${i.important ? 'alerte' : ''}`}>
-                {i.important ? 'Important · ' : ''}{i.media}{i.nbSources > 1 ? ` + ${i.nbSources - 1} média${i.nbSources > 2 ? 's' : ''}` : ''} · {depuis(i.date)}
+    <>
+      <div className="legende">
+        {Object.entries(FAMILLES).map(([k, f]) => <span key={k}><i className={`f-${k}`} />{f}</span>)}
+      </div>
+      <div className="cartes">
+        {infos.map((i, k) => {
+          const id = i.candidats[0];
+          return (
+            <Lien key={k} href={i.lien} className={`carte${i.important ? ' imp' : ''}`}>
+              <div className="c1">
+                <span className={`badge f-${i.famille}`}>{FAMILLES[i.famille]}</span>
+                <span className="media">{i.media}</span>
+                <span className="quand">{depuis(i.date)}</span>
               </div>
-            </div>
-          </Lien>
-        );
-      })}
-    </div>
+              <div className="c2">
+                {id ? <span className="portrait" style={{ borderColor: rgb(COULEURS[id] || '128,128,136') }}><img src={`/photos/${id}.png`} alt="" /></span> : null}
+                <div className="titre">{i.titre}</div>
+              </div>
+              {i.important || i.autres.length ? (
+                <div className="c3">
+                  {i.important ? <span className="imp">● Important</span> : null}
+                  {i.autres.length ? <span>Repris par</span> : null}
+                  {i.autres.slice(0, 3).map((m) => <span key={m.nom} className="mini"><i className={`f-${m.famille}`} />{m.nom}</span>)}
+                  {i.autres.length > 3 ? <span>+{i.autres.length - 3}</span> : null}
+                </div>
+              ) : null}
+            </Lien>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
@@ -276,6 +330,28 @@ function PanneauFiche({ f, retour }) {
 // ------------------------------------------------------------------ feuille Story Instagram
 function FeuilleStory({ mode, fermer }) {
   const q = mode === 'dernier' ? '?mode=dernier' : '';
+  const [meta, setMeta] = useState(null);       // publication configurée côté serveur ?
+  const [envoi, setEnvoi] = useState(0);
+  const [retour, setRetour] = useState(null);
+  useEffect(() => { fetch('/api/publier').then((r) => r.json()).then((d) => setMeta(!!d.configure)).catch(() => setMeta(false)); }, []);
+  const publier = async (tour) => {
+    let cle = '';
+    try { cle = localStorage.getItem('cle-publication') || ''; } catch {}
+    if (!cle) cle = window.prompt('Code de publication (PUBLICATION_CLE) :') || '';
+    if (!cle) return;
+    if (!window.confirm(`Publier la story du ${tour === 1 ? '1er' : '2nd'} tour sur Instagram ?`)) return;
+    setEnvoi(tour); setRetour(null);
+    try {
+      const r = await fetch('/api/publier', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tour, mode, cle }) });
+      const d = await r.json();
+      if (r.status === 403) { try { localStorage.removeItem('cle-publication'); } catch {} }
+      else if (d.ok) { try { localStorage.setItem('cle-publication', cle); } catch {} }
+      setRetour(d.ok ? { ok: true, texte: 'Story publiée sur Instagram.' } : { ok: false, texte: d.erreur || 'Échec de la publication.' });
+    } catch {
+      setRetour({ ok: false, texte: 'Le site ne répond pas.' });
+    }
+    setEnvoi(0);
+  };
   const partager = async (tour) => {
     const url = `/api/story/${tour}${q}`;
     try {
@@ -295,6 +371,16 @@ function FeuilleStory({ mode, fermer }) {
           <button onClick={() => partager(1)}><img src={`/api/story/1${q}`} alt="Story 1er tour" />1er tour</button>
           <button onClick={() => partager(2)}><img src={`/api/story/2${q}`} alt="Story 2nd tour" />2nd tour</button>
         </div>
+        {meta ? (
+          <div className="publier">
+            <div className="h">Publier sur Instagram (API Meta)</div>
+            <div className="duo2">
+              <button className="grosbtn ig" disabled={!!envoi} onClick={() => publier(1)}>{envoi === 1 ? 'Publication…' : 'Publier le 1er tour'}</button>
+              <button className="grosbtn ig" disabled={!!envoi} onClick={() => publier(2)}>{envoi === 2 ? 'Publication…' : 'Publier le 2nd tour'}</button>
+            </div>
+            {retour ? <p className={retour.ok ? 'ok' : 'ko'}>{retour.texte}</p> : null}
+          </div>
+        ) : meta === false ? <p className="note">Publication Instagram : à configurer sur Vercel (voir le README).</p> : null}
         <button className="grosbtn" onClick={fermer}>Fermer</button>
       </div>
     </div>
@@ -363,7 +449,7 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
   }
 
   let credit;
-  if (onglet === 1) credit = <>Google Actualités, filtré sur 40 médias reconnus. « Important » = repris par au moins 2 médias.</>;
+  if (onglet === 1) credit = <>Une recherche Google Actualités par média : indépendants (sans actionnaire milliardaire), service public et non lucratif. « Important » = repris par au moins 2 médias.</>;
   else if (onglet === 2) credit = <>Poitiers : <Lien href={URL.demosphere}>Démosphère</Lien> (agenda militant). Nationales : appels repris par au moins 2 médias. « ＋ » ajoute au calendrier.</>;
   else if (onglet === 3) credit = <>Fiches rédigées à partir de l'Insee, vie-publique.fr et des vidéos de Crésus.</>;
   else credit = <>Données <Lien href={URL.donnees}>Sondax d'après Wikipédia</Lien> (CC BY-SA 4.0), via data.gouv.fr. Moyenne pondérée par récence, échantillon et institut.</>;
@@ -381,7 +467,7 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
         </button>
       </header>
 
-      <CompteARebours />
+      <Decomptes />
 
       <nav className="seg">
         <div className="pill" style={{ transform: `translateX(${onglet * 100}%)` }} />

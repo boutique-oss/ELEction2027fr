@@ -3,11 +3,12 @@
 // Données : API du site (Sondax d'après Wikipédia, CC BY-SA, via data.gouv.fr). Un appui ouvre le site.
 const SITE = '__SITE__';
 const TOUR1 = new Date('2027-04-18T08:00:00+02:00');
+const FIN1 = new Date('2027-04-16T23:59:59+02:00');   // fin officielle de la campagne du 1er tour
 
 const C = {
   fond1: new Color('#1e1e22'), fond2: new Color('#0f0f12'), texte: new Color('#f5f5f7'),
   gris: new Color('#aeaeb2'), muet: new Color('#76767c'), piste: new Color('#ffffff', 0.09),
-  hausse: new Color('#30d158'), baisse: new Color('#ff6358'),
+  hausse: new Color('#30d158'), baisse: new Color('#ff6358'), alerte: new Color('#ff9f0a'),
 };
 const rgb = (s, a = 1) => { const [r, g, b] = s.split(',').map(Number); return new Color('#' + [r, g, b].map((x) => x.toString(16).padStart(2, '0')).join(''), a); };
 
@@ -73,20 +74,23 @@ async function creer(famille) {
   w.refreshAfterDate = new Date(Date.now() + 30 * 60 * 1000);
 
   const s = await json('/api/sondages');
-  const jours = Math.max(0, Math.ceil((TOUR1 - new Date()) / 86400000));
+  const jours = Math.max(0, Math.floor((TOUR1 - new Date()) / 86400000));
+  const finCampagne = Math.max(0, Math.floor((FIN1 - new Date()) / 86400000));
 
   const tete = w.addStack(); tete.centerAlignContent();
   texte(tete, '🇫🇷 Présidentielle 2027', famille === 'small' ? 11 : 13, C.texte, 'semibold');
   tete.addSpacer();
-  texte(tete, `J−${jours}`, famille === 'small' ? 11 : 13, C.gris, 'semibold');
+  if (famille !== 'small') texte(tete, `Fin de campagne J−${finCampagne} · vote J−${jours}`, 12, C.alerte, 'semibold');
   w.addSpacer(famille === 'small' ? 6 : 8);
 
   if (!s) { texte(w, 'Pas de connexion', 12, C.gris); return w; }
 
   if (famille === 'small') {
+    texte(w, 'FIN DE CAMPAGNE', 9, C.alerte, 'semibold');
     const n = w.addStack(); n.bottomAlignContent();
-    texte(n, String(jours), 34, C.texte, 'bold'); n.addSpacer(4); texte(n, 'jours', 12, C.gris, 'semibold');
-    w.addSpacer(4);
+    texte(n, String(finCampagne), 32, C.texte, 'bold'); n.addSpacer(4); texte(n, 'jours', 12, C.gris, 'semibold');
+    texte(w, `vote dans ${jours} j`, 10, C.gris);
+    w.addSpacer(3);
     for (const c of s.premierTour.slice(0, 3)) {
       const l = w.addStack(); l.centerAlignContent();
       const pt = l.addText('●'); pt.font = Font.systemFont(9); pt.textColor = rgb(c.couleur);

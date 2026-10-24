@@ -35,13 +35,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .btn.tourne svg { animation: tourne 1s linear infinite; color: var(--on); }
 @keyframes tourne { to { transform: rotate(360deg); } }
 
-/* compte à rebours */
-.hero { margin-top: 16px; background: var(--carte); border: 1px solid var(--bord); border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
-.hero .g { flex: 1; min-width: 0; }
-.hero .n { font-size: 44px; font-weight: 700; line-height: 1; letter-spacing: -1px; }
-.hero .n small { font-size: 16px; font-weight: 600; color: var(--t2); letter-spacing: 0; margin-left: 6px; }
-.hero .s { font-size: 12.5px; color: var(--t2); margin-top: 8px; }
-.hero .puces { display: flex; flex-direction: column; gap: 8px; }
 .puce { display: inline-flex; align-items: center; gap: 4px; padding: 7px 12px; border-radius: 999px; background: var(--seg); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
 .puce:active, .puce.on { background: var(--segon); }
 
@@ -130,3 +123,87 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .apercus button { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; text-align: center; }
 .apercus img { width: 100%; aspect-ratio: 9 / 16; border-radius: 10px; background: var(--seg); object-fit: cover; }
 .grosbtn { display: block; width: 100%; margin-top: 12px; padding: 13px; border-radius: 12px; background: var(--seg); font-size: 15px; font-weight: 600; text-align: center; }
+
+/* ===================================================================
+   v3 (24 oct. 2026) : décomptes, cartes d'actu, lisibilité renforcée
+   =================================================================== */
+:root { --t2: #545458; --t3: #6e6e73; --carte2: #f2f2f6; --indep: #7a4fd6; --public: #0a6ad8; --nonluc: #1f9a52; }
+@media (prefers-color-scheme: dark) {
+  :root { --t2: #c7c7cc; --t3: #98989f; --carte2: #26262b; --indep: #b78cff; --public: #4da3ff; --nonluc: #45c67a; }
+}
+body { font-size: 16px; line-height: 1.45; }
+.ttl b { font-size: 19px; line-height: 1.25; }
+.ttl span { font-size: 13.5px; line-height: 1.3; }
+.nom { font-size: 16px; line-height: 1.35; }
+.sousl { font-size: 13.5px; line-height: 1.35; }
+.val { font-size: 18px; }
+.tr { font-size: 13px; }
+.seg { height: 42px; border-radius: 12px; padding: 3px; }
+.seg .pill { top: 3px; bottom: 3px; left: 3px; width: calc((100% - 6px) / 4); border-radius: 9px; }
+.seg button { font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.puce { font-size: 14px; padding: 9px 14px; }
+.sous .info { font-size: 13px; line-height: 1.3; }
+.credit { font-size: 12.5px; }
+.txt { font-size: 15.5px; }
+
+/* bloc décomptes */
+.decomptes { margin-top: 18px; background: var(--carte); border: 1px solid var(--bord); border-radius: 20px; padding: 16px; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dc { background: var(--carte2); border-radius: 14px; padding: 12px; min-width: 0; }
+.dc .lab { font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--t3); }
+.dc .n { font-size: 40px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.2; margin-top: 4px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dc .n small { font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--t2); margin-left: 4px; }
+.dc .d { font-size: 13px; line-height: 1.35; color: var(--t2); margin-top: 6px; }
+.dc.fin { box-shadow: inset 0 0 0 1.5px rgba(255,159,10,.55); }
+.dc.fin .lab { color: var(--alerte); }
+.frise { margin-top: 16px; }
+.rail { position: relative; height: 8px; border-radius: 4px; background: var(--piste); }
+.rail .fait { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: linear-gradient(90deg, #0055a4, #6e8cff); }
+.rail .pt { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--carte); border: 2.5px solid var(--t3); }
+.rail .pt.campagne { border-color: var(--alerte); }
+.rail .pt.auj { border-color: #fff; background: #6e8cff; width: 16px; height: 16px; margin: -8px 0 0 -8px; }
+.jalons { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 4px; margin-top: 9px; font-size: 11.5px; color: var(--t3); }
+.jalons span { text-align: center; line-height: 1.3; min-width: 0; white-space: nowrap; }
+.jalons b { display: block; color: var(--t2); font-weight: 600; }
+.decomptes .puces { display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+/* cartes d'actu */
+.legende { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
+.legende i, .mini i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.mini i { width: 7px; height: 7px; margin-right: 5px; }
+i.f-independant { background: var(--indep); } i.f-public { background: var(--public); } i.f-nonlucratif { background: var(--nonluc); }
+.cartes { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.carte { display: block; background: var(--carte); border: 1px solid var(--bord); border-radius: 16px; padding: 13px 14px; }
+.carte:active { background: var(--survol); }
+.carte.imp { border-color: rgba(255,159,10,.5); }
+.c1 { display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 1.3; min-width: 0; }
+.c1 .media { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.c1 .quand { margin-left: auto; color: var(--t3); flex: none; }
+.badge { flex: none; padding: 3px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; letter-spacing: .2px; }
+.badge.f-independant { background: color-mix(in srgb, var(--indep) 16%, transparent); color: var(--indep); }
+.badge.f-public { background: color-mix(in srgb, var(--public) 16%, transparent); color: var(--public); }
+.badge.f-nonlucratif { background: color-mix(in srgb, var(--nonluc) 16%, transparent); color: var(--nonluc); }
+.c2 { display: flex; gap: 12px; margin-top: 10px; align-items: flex-start; }
+.portrait { width: 48px; height: 48px; border-radius: 50%; flex: none; border: 2.5px solid; padding: 2px; }
+.portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.c2 .titre { font-size: 16.5px; font-weight: 600; line-height: 1.4; min-width: 0; overflow-wrap: anywhere; }
+.c3 { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
+.c3 .imp { color: var(--alerte); font-weight: 700; margin-right: 2px; }
+.mini { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 8px; background: var(--seg); }
+
+/* publication Instagram */
+.publier { margin-top: 14px; }
+.publier .h { margin-top: 0; }
+.duo2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.duo2 .grosbtn { margin-top: 0; }
+.grosbtn.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d 60%, #fcb045); color: #fff; }
+.grosbtn:disabled { opacity: .6; }
+.publier .ok { color: var(--hausse); font-weight: 600; margin: 8px 0 0; }
+.publier .ko { color: var(--baisse); font-weight: 600; margin: 8px 0 0; }
+
+/* petits écrans : onglets et frise plus compacts */
+@media (max-width: 400px) {
+  .seg button { font-size: 13px; }
+  .jalons { font-size: 11px; gap: 2px; }
+  .dc .n { font-size: 36px; }
+}
