@@ -6,7 +6,7 @@ import sharp from 'sharp';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { chargerSondages, resume, REGLAGES } from '@/lib/sondages';
-import { paris, MOIS_LONG } from '@/lib/format';
+import { paris, MOIS_LONG, milliers } from '@/lib/format';
 
 export const runtime = 'nodejs';
 
@@ -70,12 +70,12 @@ export async function GET(req, { params }) {
   const decomptes = now > Date.parse('2027-05-02T22:00:00+02:00') ? []
     : [{ lab: 'FIN DE CAMPAGNE', n: fn, u: fu }, { lab: 'JOUR DU VOTE', n: vn, u: vu }];
 
-  let corps, sous, sources;
+  let corps, sous, instituts;
   if (t === 1) {
     sous = mode === 'dernier' ? `Intentions de vote : ${r.sous}.`
-      : `Intentions de vote : moyenne pondérée du dernier sondage de ${r.sous.match(/\d+/)?.[0]} instituts sur ${REGLAGES.fenetre} jours. Flèches : évolution sur ${REGLAGES.tendance} jours.`;
-    sources = r.sources.premierTour;
-    const lignes = await Promise.all(r.premierTour.slice(0, 10).map(async (c) => ({ ...c, img: await imagePhoto(c.photo) })));
+      : `Dernier sondage de chaque institut (${REGLAGES.fenetre} j), corrigé des biais d'institut. Flèches : évolution sur ${REGLAGES.tendance} j.`;
+    instituts = r.instituts.premierTour;
+    const lignes = await Promise.all(r.premierTour.slice(0, 8).map(async (c) => ({ ...c, img: await imagePhoto(c.photo) })));
     corps = (
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {lignes.map((c) => {
@@ -83,8 +83,8 @@ export async function GET(req, { params }) {
           const tend = e === null ? '' : Math.abs(e) < 0.25 ? `= ${Math.abs(e).toFixed(1).replace('.', ',')}` : `${e > 0 ? '↑ +' : '↓ −'}${Math.abs(e).toFixed(1).replace('.', ',')}`;
           const tc = e === null || Math.abs(e) < 0.25 ? MUET : e > 0 ? '#30d158' : '#ff6358';
           return (
-            <div key={c.id} style={{ display: 'flex', alignItems: 'center', height: 86 }}>
-              <Portrait src={c.img} couleur={c.couleur} sigle={c.parti} taille={72} />
+            <div key={c.id} style={{ display: 'flex', alignItems: 'center', height: 80 }}>
+              <Portrait src={c.img} couleur={c.couleur} sigle={c.parti} taille={66} />
               <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, flexBasis: 0, minWidth: 0, marginLeft: 24, marginRight: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'baseline' }}>
                   <div style={{ display: 'flex', fontSize: 36, fontWeight: 600, color: BLANC }}>{c.nom}</div>
@@ -105,9 +105,9 @@ export async function GET(req, { params }) {
     );
   } else {
     sous = mode === 'dernier' ? 'Intentions de vote au second tour, dernier sondage publié.'
-      : `Intentions de vote au second tour : moyenne pondérée des duels testés (dernier sondage par institut, ${REGLAGES.fenetre} jours) (sur les suffrages exprimés).`;
-    sources = r.sources.secondTour;
-    const duels = await Promise.all(r.secondTour.slice(0, 5).map(async (d) => ({
+      : `Duels testés : dernier sondage de chaque institut (${REGLAGES.fenetre} j), en suffrages exprimés.`;
+    instituts = r.instituts.secondTour;
+    const duels = await Promise.all(r.secondTour.slice(0, 4).map(async (d) => ({
       ...d, ig: await imagePhoto(d.g.photo), id: await imagePhoto(d.d.photo),
     })));
     corps = (
@@ -174,13 +174,31 @@ export async function GET(req, { params }) {
         {corps}
         <div style={{ display: 'flex', flexGrow: 1 }} />
         <div style={{ display: 'flex', flexDirection: 'column', borderTop: '2px solid rgba(255,255,255,0.15)', paddingTop: 20 }}>
-          <div style={{ display: 'flex', fontSize: 24, fontWeight: 600, color: GRIS, letterSpacing: 1 }}>SOURCES</div>
-          <div style={{ display: 'flex', fontSize: 23, color: GRIS, marginTop: 10, lineHeight: 1.35 }}>{`Sondages : ${sources}.`}</div>
-          <div style={{ display: 'flex', fontSize: 23, color: GRIS, marginTop: 8, lineHeight: 1.35 }}>
-            Données : Sondax d'après Wikipédia (CC BY-SA 4.0), via data.gouv.fr. Moyenne pondérée par récence, taille d'échantillon et institut. Notices complètes sur commission-des-sondages.fr.
+          <div style={{ display: 'flex', fontSize: 24, fontWeight: 600, color: GRIS, letterSpacing: 1 }}>
+            {`INSTITUTS RETENUS (${instituts.length})`}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: 12 }}>
+            {instituts.slice(0, 8).map((i, k) => (
+              <div key={k} style={{ display: 'flex', flexDirection: 'column', width: 449, marginRight: k % 2 ? 0 : 22, marginBottom: 12,
+                padding: '10px 18px', borderRadius: 16, background: 'rgba(255,255,255,0.07)' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', fontSize: 28, fontWeight: 700, color: BLANC }}>{i.nom}</div>
+                  {mode === 'moyenne' ? <div style={{ display: 'flex', fontSize: 22, fontWeight: 600, color: GRIS }}>{`poids ${i.poids} %`}</div> : null}
+                </div>
+                <div style={{ display: 'flex', fontSize: 21, color: GRIS, marginTop: 2 }}>
+                  {`${i.terrain}${i.n ? ` · ${milliers(i.n)} pers.` : ''}`}
+                </div>
+                {i.correction ? <div style={{ display: 'flex', fontSize: 20, fontWeight: 600, color: '#ff9f0a', marginTop: 2 }}>{`biais corrigé : ${i.correction}`}</div> : null}
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', fontSize: 21, color: GRIS, marginTop: 4, lineHeight: 1.35 }}>
+            {mode === 'moyenne' && t === 1
+              ? "Biais corrigé : écart habituel de l'institut aux autres sur 90 jours. Données Sondax/Wikipédia (CC BY-SA 4.0), data.gouv.fr, notices sur commission-des-sondages.fr."
+              : "Données Sondax/Wikipédia (CC BY-SA 4.0), data.gouv.fr, notice sur commission-des-sondages.fr."}
           </div>
           <div style={{ display: 'flex', fontSize: 21, color: MUET, marginTop: 8, lineHeight: 1.35 }}>
-            Un sondage est une photographie de l'opinion, pas une prévision. Marge d'erreur de 1 à 3 points selon la taille de l'échantillon.
+            Un sondage est une photographie de l'opinion, pas une prévision (marge de 1 à 3 points).
           </div>
           {pseudo ? <div style={{ display: 'flex', justifyContent: 'center', fontSize: 30, fontWeight: 600, marginTop: 24 }}>{pseudo}</div> : null}
         </div>
