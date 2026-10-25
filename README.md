@@ -2,7 +2,7 @@
 
 Version web (Next.js, hébergée sur Vercel) du widget Rainmeter « Présidentielle 2027 » :
 
-- **Sondages** : moyenne pondérée du 1er tour, duels du 2nd tour, liste des sondages, fiche de chaque candidat (courbe, chances Sondax, débrief du programme).
+- **Sondages** : moyenne pondérée du 1er tour (dernier sondage de chaque institut sur 7 jours, sans accumulation), duels du 2nd tour, liste des sondages, fiche de chaque candidat (courbe, chances Sondax, débrief du programme).
 - **Actu** : une recherche Google Actualités par média retenu (filtre `site:`), le média étant vérifié sur la source réelle de l'article. Trois familles : **indépendants** sans actionnaire milliardaire (Mediapart, Canard enchaîné, Arrêt sur images, Les Jours, Alternatives Économiques, Politis, Disclose, Contexte, Mediacités, Reporterre, Basta!), **service public** (franceinfo, Radio France, France 24, RFI, Public Sénat, LCP, AFP, Arte, TV5Monde) et **non lucratif** (Ouest-France, La Croix). « Important » = repris par au moins 2 médias.
 - **Manifs** : Démosphère Poitiers et appels nationaux. Le bouton « ＋ » ajoute l'événement au calendrier (fichier .ics).
 - **Comprendre** : 8 fiches (dette, budget, retraites, BCE, comment voter…).
