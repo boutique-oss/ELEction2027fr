@@ -13,7 +13,7 @@ Version web (Next.js, hébergée sur Vercel) du widget Rainmeter « Présidentie
 
 | Route | Contenu | Cache |
 |---|---|---|
-| `/api/sondages?mode=moyenne\|dernier` | 1er tour, duels, liste, sources | 1 h (CSV data.gouv.fr) |
+| `/api/sondages?mode=moyenne\|dernier` (`?format=tsv` pour Rainmeter) | 1er tour, duels, liste, instituts retenus, sources | 1 h (CSV data.gouv.fr) |
 | `/api/csv` | CSV Sondax relayé pour le widget Rainmeter | 1 h |
 | `/api/actu` (`?format=tsv` pour Rainmeter) | infos regroupées par sujet | 15 min |
 | `/api/manifs` (`?format=tsv` pour Rainmeter) | Démosphère + appels nationaux | 1 h |
