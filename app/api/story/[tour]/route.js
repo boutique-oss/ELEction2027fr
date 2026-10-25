@@ -105,7 +105,7 @@ export async function GET(req, { params }) {
     );
   } else {
     sous = mode === 'dernier' ? 'Intentions de vote au second tour, dernier sondage publié.'
-      : `Duels testés : dernier sondage de chaque institut (${REGLAGES.fenetre} j), en suffrages exprimés.`;
+      : `Duels testés : dernier sondage de chaque institut (${REGLAGES.fenetre} j), corrigé des biais d'institut, en suffrages exprimés.`;
     instituts = r.instituts.secondTour;
     const duels = await Promise.all(r.secondTour.slice(0, 4).map(async (d) => ({
       ...d, ig: await imagePhoto(d.g.photo), id: await imagePhoto(d.d.photo),
@@ -193,7 +193,7 @@ export async function GET(req, { params }) {
             ))}
           </div>
           <div style={{ display: 'flex', fontSize: 21, color: GRIS, marginTop: 4, lineHeight: 1.35 }}>
-            {mode === 'moyenne' && t === 1
+            {mode === 'moyenne'
               ? "Biais corrigé : écart habituel de l'institut aux autres sur 90 jours. Données Sondax/Wikipédia (CC BY-SA 4.0), data.gouv.fr, notices sur commission-des-sondages.fr."
               : "Données Sondax/Wikipédia (CC BY-SA 4.0), data.gouv.fr, notice sur commission-des-sondages.fr."}
           </div>
