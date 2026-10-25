@@ -4,6 +4,7 @@ const nextConfig = {
   outputFileTracingIncludes: {
     '/api/story/[tour]': ['./assets/fonts/**/*', './public/photos/**/*'],
     '/scriptable': ['./scriptable/**/*'],
+    '/rainmeter': ['./rainmeter/**/*'],
   },
 };
 
