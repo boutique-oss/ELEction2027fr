@@ -22,6 +22,15 @@ Version web (Next.js, hébergée sur Vercel) du widget Rainmeter « Présidentie
 | `/api/story/1` · `/api/story/2` | story PNG (`?mode=dernier`, `?pseudo=@compte`, `?format=jpg`) | 15 min |
 | `/api/ics?uid=…` | un événement au format iCalendar | — |
 | `/scriptable` | script du widget iPhone, déjà réglé sur l'adresse du site | — |
+| `/rainmeter` | skin Rainmeter « Sondages » en .zip, déjà réglé sur l'adresse du site | — |
+
+## Widget Windows (Rainmeter) : mêmes chiffres que le site
+
+1. Ouvrir `https://<ton-site>.vercel.app/rainmeter` : le fichier `Presidentielle2027Sondages.zip` se télécharge.
+2. Clic droit › « Extraire tout » vers `Documents\Rainmeter\Skins` (on obtient `Skins\Presidentielle2027Sondages`).
+3. Icône Rainmeter (barre des tâches) › clic droit › « Actualiser tout », puis « Skins » › Presidentielle2027Sondages › Sondages.ini.
+
+Le skin ne calcule rien : il affiche la moyenne du site (`/api/sondages?format=tsv`), mise à jour toutes les 15 min. Aucun fichier à modifier.
 
 ## Mettre la page sur l'écran d'accueil de l'iPhone
 
