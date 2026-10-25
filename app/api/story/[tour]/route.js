@@ -73,7 +73,7 @@ export async function GET(req, { params }) {
   let corps, sous, sources;
   if (t === 1) {
     sous = mode === 'dernier' ? `Intentions de vote : ${r.sous}.`
-      : `Intentions de vote : moyenne pondérée de ${r.sous.match(/\d+/)?.[0]} sondages publiés ces ${REGLAGES.fenetre} derniers jours. Flèches : évolution sur ${REGLAGES.tendance} jours.`;
+      : `Intentions de vote : moyenne pondérée du dernier sondage de ${r.sous.match(/\d+/)?.[0]} instituts sur ${REGLAGES.fenetre} jours. Flèches : évolution sur ${REGLAGES.tendance} jours.`;
     sources = r.sources.premierTour;
     const lignes = await Promise.all(r.premierTour.slice(0, 10).map(async (c) => ({ ...c, img: await imagePhoto(c.photo) })));
     corps = (
@@ -105,7 +105,7 @@ export async function GET(req, { params }) {
     );
   } else {
     sous = mode === 'dernier' ? 'Intentions de vote au second tour, dernier sondage publié.'
-      : `Intentions de vote au second tour : moyenne pondérée des duels testés ces ${REGLAGES.fenetre} derniers jours (sur les suffrages exprimés).`;
+      : `Intentions de vote au second tour : moyenne pondérée des duels testés (dernier sondage par institut, ${REGLAGES.fenetre} jours) (sur les suffrages exprimés).`;
     sources = r.sources.secondTour;
     const duels = await Promise.all(r.secondTour.slice(0, 5).map(async (d) => ({
       ...d, ig: await imagePhoto(d.g.photo), id: await imagePhoto(d.d.photo),
