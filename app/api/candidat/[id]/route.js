@@ -14,5 +14,5 @@ export async function GET(req, { params }) {
     programme,
     noteCresus: programme?.cresus ? NOTE_CRESUS : null,
     redige: MAJ,
-  }, { headers: { 'Cache-Control': 's-maxage=1800, stale-while-revalidate=7200' } });
+  }, { headers: { 'Cache-Control': 's-maxage=900, stale-while-revalidate=1800' } });
 }

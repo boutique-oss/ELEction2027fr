@@ -3,7 +3,7 @@ import { chargerSondages, resume } from '@/lib/sondages';
 import { FICHES, MAJ } from '@/lib/contenu';
 
 // Page régénérée au plus toutes les 15 minutes ; le reste se charge à la demande
-export const revalidate = 900;
+export const revalidate = 600;
 
 export default async function Page() {
   let sondages = null;
