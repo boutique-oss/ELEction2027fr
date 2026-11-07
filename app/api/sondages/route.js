@@ -1,7 +1,7 @@
 import { chargerSondages, resume } from '@/lib/sondages';
 import { sondagesTSV, reponseTSV } from '@/lib/tsv';
 
-const CACHE = 's-maxage=900, stale-while-revalidate=3600';
+const CACHE = 's-maxage=600, stale-while-revalidate=600';
 
 // GET /api/sondages?mode=moyenne|dernier
 // ?format=tsv : résultats calculés en texte pour le widget Rainmeter (au lieu de refaire la moyenne en Lua)

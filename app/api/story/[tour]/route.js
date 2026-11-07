@@ -210,9 +210,9 @@ export async function GET(req, { params }) {
   if (q.get('format') === 'jpg') {
     const jpg = await sharp(Buffer.from(await image.arrayBuffer())).jpeg({ quality: 92, chromaSubsampling: '4:4:4' }).toBuffer();
     return new Response(jpg, { headers: { 'Content-Type': 'image/jpeg', 'Content-Disposition': `inline; filename="${nom}.jpg"`,
-      'Cache-Control': 's-maxage=900, stale-while-revalidate=3600' } });
+      'Cache-Control': 's-maxage=600, stale-while-revalidate=600' } });
   }
   image.headers.set('Content-Disposition', `inline; filename="${nom}.png"`);
-  image.headers.set('Cache-Control', 's-maxage=900, stale-while-revalidate=3600');
+  image.headers.set('Cache-Control', 's-maxage=600, stale-while-revalidate=600');
   return image;
 }
