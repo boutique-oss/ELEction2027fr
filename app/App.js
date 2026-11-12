@@ -452,7 +452,7 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
   if (onglet === 1) credit = <>Une recherche Google Actualités par média : indépendants (sans actionnaire milliardaire), service public et non lucratif. « Important » = repris par au moins 2 médias.</>;
   else if (onglet === 2) credit = <>Poitiers : <Lien href={URL.demosphere}>Démosphère</Lien> (agenda militant). Nationales : appels repris par au moins 2 médias. « ＋ » ajoute au calendrier.</>;
   else if (onglet === 3) credit = <>Fiches rédigées à partir de l'Insee, vie-publique.fr et des vidéos de Crésus.</>;
-  else credit = <>Données <Lien href={URL.donnees}>Sondax d'après Wikipédia</Lien> (CC BY-SA 4.0), via data.gouv.fr. Moyenne du dernier sondage de chaque institut sur 7 jours, pondérée par récence et échantillon.</>;
+  else credit = <>Données <Lien href={URL.donnees}>Sondax d'après Wikipédia</Lien> (CC BY-SA 4.0), via data.gouv.fr. Moyenne du dernier sondage de chaque institut (7 jours, élargis jusqu'à 28 pour avoir au moins 4 instituts), pondérée par récence et échantillon, aucun institut au-dessus de 35 %, corrigée des biais d'institut.</>;
 
   return (
     <main className="app">
@@ -491,7 +491,7 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
             <span className="ic" style={{ background: 'var(--accent)' }}>📈</span>
             <div className="mid">
               <div className="nom">{mode === 'moyenne' ? 'Moyenne pondérée' : 'Dernier sondage seul'}</div>
-              <div className="sousl">{mode === 'moyenne' ? 'Dernier sondage par institut · 7 j · récence · échantillon' : 'Mesure brute publiée par l\'institut'}</div>
+              <div className="sousl">{mode === 'moyenne' ? 'Dernier sondage par institut · 4 instituts min. · 35 % max chacun' : 'Mesure brute publiée par l\'institut'}</div>
             </div>
             <span className={`sw ${mode === 'moyenne' ? 'on' : ''}`} />
           </button>
