@@ -7,6 +7,6 @@ export default function manifest() {
     display: 'standalone',
     background_color: '#141416',
     theme_color: '#141416',
-    icons: [{ src: '/apple-icon', sizes: '180x180', type: 'image/png' }],
+    icons: [{ src: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   };
 }
