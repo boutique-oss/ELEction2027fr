@@ -16,7 +16,7 @@ const URL = {
 };
 
 const rgb = (c) => `rgb(${c})`;
-const FAMILLES = { independant: 'Indépendant', public: 'Service public', nonlucratif: 'Non lucratif' };
+const FAMILLES = { lfi: 'Média insoumis', gauche: 'Gauche indépendante', independant: 'Indépendant', public: 'Service public', nonlucratif: 'Non lucratif' };
 const COULEURS = { 'le-pen': '24,62,150', bardella: '24,62,150', melenchon: '204,36,67', philippe: '30,150,215', glucksmann: '226,74,134',
   retailleau: '0,92,190', lisnard: '0,92,190', attal: '255,196,0', zemmour: '72,72,110', knafo: '72,72,110', tondelier: '22,163,74',
   roussel: '214,24,24', hollande: '236,72,104', ruffin: '236,72,104', arthaud: '150,20,20', 'dupont-aignan': '0,130,196', villepin: '130,96,176' };
@@ -427,7 +427,7 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
 
   const info = useMemo(() => {
     if (onglet === 0) return s ? (sous[0] === 3 ? `${s.total} sondages` : sous[0] === 2 ? (mode === 'dernier' ? 'Dernier sondage' : 'Moyenne des duels')
-      : mode === 'dernier' ? s.sous.split(' · ')[0] : s.sous.replace('Moyenne de ', '').replace(' derniers jours', ' j')) : '';
+      : mode === 'dernier' ? s.sous.split(' · ')[0] : (s.sous.split(' · ')[1] || s.sous)) : '';
     if (onglet === 1) return actu ? (filtre ? filtre.nom : `${actu.articles} articles · ${depuis(actu.maj)}`) : '';
     if (onglet === 2) return manifs ? (sous[2] === 1 ? `${manifs.locales.length} à venir` : `${manifs.nationales.length} appels`) : '';
     return `Rédigé le ${redige}`;
@@ -449,16 +449,16 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
   }
 
   let credit;
-  if (onglet === 1) credit = <>Une recherche Google Actualités par média : indépendants (sans actionnaire milliardaire), service public et non lucratif. « Important » = repris par au moins 2 médias.</>;
+  if (onglet === 1) credit = <>Choix assumé : les sujets sur Mélenchon, LFI et L'Avenir en commun passent en premier, puis les médias insoumis et de gauche indépendante, puis les indépendants, le service public et le non lucratif. Une recherche Google Actualités par média. « Important » = repris par au moins 2 médias.</>;
   else if (onglet === 2) credit = <>Poitiers : <Lien href={URL.demosphere}>Démosphère</Lien> (agenda militant). Nationales : appels repris par au moins 2 médias. « ＋ » ajoute au calendrier.</>;
-  else if (onglet === 3) credit = <>Fiches rédigées à partir de l'Insee, vie-publique.fr et des vidéos de Crésus.</>;
-  else credit = <>Données <Lien href={URL.donnees}>Sondax d'après Wikipédia</Lien> (CC BY-SA 4.0), via data.gouv.fr. Moyenne du dernier sondage de chaque institut (7 jours, élargis jusqu'à 28 pour avoir au moins 4 instituts), pondérée par récence et échantillon, aucun institut au-dessus de 35 %, corrigée des biais d'institut.</>;
+  else if (onglet === 3) credit = <>Fiches militantes : elles présentent et défendent L'Avenir en commun (édition du 6 novembre 2026). Mesures vérifiées sur le programme officiel, LCP et Public Sénat. Les arguments sont les nôtres.</>;
+  else credit = <>Données <Lien href={URL.donnees}>Sondax d'après Wikipédia</Lien> (CC BY-SA 4.0), via data.gouv.fr. Moyenne des 2 sondages les plus récents (deux instituts différents, poids égal), corrigée des biais d'institut. Deux sondages suffisent pour suivre la tendance, pas pour la lisser : la moyenne peut bouger vite.</>;
 
   return (
     <main className="app">
       <header className="hd">
         <div className="logo"><i /><i /><i /></div>
-        <div className="ttl"><b>Présidentielle 2027</b><span>Sondages, actu, manifs et repères</span></div>
+        <div className="ttl"><b>Présidentielle 2027</b><span>Site engagé · L'Avenir en commun</span></div>
         <button className="btn" onClick={() => setStory(true)} aria-label="Story Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="6" width="18" height="14" rx="3" /><circle cx="12" cy="13" r="3.5" /><path d="M8.5 6l1.5-2.5h4L15.5 6" /></svg>
         </button>
@@ -466,6 +466,8 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M20 12a8 8 0 1 1-2.34-5.66" /><path d="M20 4v4.5h-4.5" /></svg>
         </button>
       </header>
+
+      <div className="engage"><b>Site engagé, non officiel.</b> Nous soutenons L'Avenir en commun, le programme de Jean-Luc Mélenchon. Les sondages affichés restent ceux des instituts.</div>
 
       <Decomptes />
 
@@ -490,8 +492,8 @@ export default function App({ sondagesInitiaux, fiches, redige }) {
           <button className="mode" onClick={() => setMode(mode === 'moyenne' ? 'dernier' : 'moyenne')}>
             <span className="ic" style={{ background: 'var(--accent)' }}>📈</span>
             <div className="mid">
-              <div className="nom">{mode === 'moyenne' ? 'Moyenne pondérée' : 'Dernier sondage seul'}</div>
-              <div className="sousl">{mode === 'moyenne' ? 'Dernier sondage par institut · 4 instituts min. · 35 % max chacun' : 'Mesure brute publiée par l\'institut'}</div>
+              <div className="nom">{mode === 'moyenne' ? 'Moyenne des 2 derniers sondages' : 'Dernier sondage seul'}</div>
+              <div className="sousl">{mode === 'moyenne' ? 'Les 2 sondages les plus récents · poids égal' : 'Mesure brute publiée par l\'institut'}</div>
             </div>
             <span className={`sw ${mode === 'moyenne' ? 'on' : ''}`} />
           </button>

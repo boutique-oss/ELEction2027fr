@@ -2,7 +2,7 @@ export default function manifest() {
   return {
     name: 'Présidentielle 2027',
     short_name: 'Présidentielle 27',
-    description: 'Sondages, actu, manifs et repères pour la présidentielle 2027',
+    description: "Site engagé pour L'Avenir en commun : sondages, actu, manifs et programme",
     start_url: '/',
     display: 'standalone',
     background_color: '#141416',

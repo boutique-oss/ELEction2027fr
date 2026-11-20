@@ -2,10 +2,12 @@
 
 Version web (Next.js, hébergée sur Vercel) du widget Rainmeter « Présidentielle 2027 » :
 
-- **Sondages** : moyenne pondérée du 1er tour (dernier sondage de chaque institut sur 7 jours, élargis jusqu'à 28 pour avoir au moins 4 instituts, aucun au-dessus de 35 % du poids, corrigé des biais d'institut), duels du 2nd tour, liste des sondages, fiche de chaque candidat (courbe, chances Sondax, débrief du programme).
-- **Actu** : une recherche Google Actualités par média retenu (filtre `site:`), le média étant vérifié sur la source réelle de l'article. Trois familles : **indépendants** sans actionnaire milliardaire (Mediapart, Canard enchaîné, Arrêt sur images, Les Jours, Alternatives Économiques, Politis, Disclose, Contexte, Mediacités, Reporterre, Basta!), **service public** (franceinfo, Radio France, France 24, RFI, Public Sénat, LCP, AFP, Arte, TV5Monde) et **non lucratif** (Ouest-France, La Croix). « Important » = repris par au moins 2 médias.
+- **Site engagé, non officiel** : il soutient L'Avenir en commun, le programme de Jean-Luc Mélenchon, et l'affiche en tête de page.
+- **Sondages** : moyenne des 2 sondages les plus récents (deux instituts différents, poids égal, corrigés des biais d'institut), duels du 2nd tour, liste des sondages, fiche de chaque candidat.
+- **Actu** : une recherche Google Actualités par média retenu (filtre `site:`). Ordre assumé : les sujets sur Mélenchon, LFI et L'Avenir en commun d'abord, puis par famille de média : **média insoumis** (L'Insoumission), **gauche indépendante** (Mediapart, Politis, Reporterre, Basta!, Le Média, Blast, L'Humanité, StreetPress, Regards, Le Vent Se Lève, Frustration, Contretemps), **indépendants**, **service public**, **non lucratif**. « Important » = repris par au moins 2 médias.
 - **Manifs** : Démosphère Poitiers et appels nationaux. Le bouton « ＋ » ajoute l'événement au calendrier (fichier .ics).
-- **Comprendre** : 8 fiches (dette, budget, retraites, BCE, comment voter…).
+- **Comprendre** : 11 fiches militantes sur L'Avenir en commun (mesures vérifiées, argument, objection et réponse), plus « Comment on vote ».
+- **Fréquentation** : Vercel Web Analytics (pages vues, pays, appareil, site d'origine ; sans cookie ni identité).
 - **Décomptes** : fin officielle de la campagne (vendredi 16 avril 2027 à minuit) et jour du vote, avec les étapes à venir.
 - **Story Instagram** : PNG 1080 × 1920 avec les sources, partageable depuis l'iPhone, ou publiée directement via l'API Meta.
 

@@ -1,8 +1,12 @@
 {
  "familles": {
-  "nonlucratif": [
-   "Non lucratif",
-   "69,198,122"
+  "lfi": [
+   "Média insoumis",
+   "204,36,67"
+  ],
+  "gauche": [
+   "Gauche indépendante",
+   "236,72,104"
   ],
   "independant": [
    "Indépendant",
@@ -11,136 +15,257 @@
   "public": [
    "Service public",
    "77,163,255"
+  ],
+  "nonlucratif": [
+   "Non lucratif",
+   "69,198,122"
   ]
  },
  "fiches": [
   {
+   "icone": "📕",
+   "couleur": "204,36,67",
+   "titre": "L'Avenir en commun en 2 minutes",
+   "sous": "1 069 mesures, un fil conducteur",
    "texte": [
-    "Le déficit, c'est l'écart sur une année entre ce que l'État dépense et ce qu'il encaisse. La dette, c'est le cumul de tous les déficits passés.",
-    "Fin 2024 (Insee) : 3 305 Md€ de dette publique, soit 113 % du PIB. Déficit 2024 : 5,8 % du PIB, près de 170 Md€ empruntés en un an.",
-    "Effet boule de neige : si le déficit dépasse la croissance, la dette rapportée au PIB monte. Les intérêts montent aussi, ce qui creuse encore le déficit.",
-    "Stabiliser la dette demanderait de ramener le déficit vers 2 % du PIB : environ 120 Md€ d'efforts par an, en impôts ou en économies."
+    "Le programme : L'Avenir en commun, 5e édition, publié le 6 novembre 2026 (éditions La Dispute, 212 pages, 4,90 €). 1 069 mesures, dont 238 nouvelles.",
+    "Comment il est écrit : plus de 24 000 contributions citoyennes, une trentaine d'auditions et des groupes d'experts, coordonnés par les députés Clémence Guetté et Hadrien Clouet.",
+    "Son plan en six parties : la bifurcation écologique et sociale d'abord, puis l'économie au service des besoins, la sécurité sociale, le goût du futur, un monde ordonné et la 6e République.",
+    "Notre argument : le programme est publié en entier cinq mois avant le vote. Chacun peut le lire, le vérifier et le contester. On vote pour des idées écrites, pas pour une image.",
+    "Ce qui manque encore : le chiffrage complet est annoncé pour début 2027. Nous mettrons cette fiche à jour à sa publication."
    ],
-   "sous": "Le stock, le flux et la boule de neige",
-   "titre": "Dette et déficit",
    "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
+    },
+    {
+     "titre": "Public Sénat : l'analyse",
+     "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme"
+    }
+   ]
+  },
+  {
+   "icone": "🌍",
+   "couleur": "22,163,74",
+   "titre": "La bifurcation écologique",
+   "sous": "Planifier plutôt que subir",
+   "texte": [
+    "Les mesures : inscrire dans la Constitution la « règle verte » (ne pas prélever sur la nature plus qu'elle ne peut reconstituer) et une « règle bleue » sur le même principe pour l'eau.",
+    "Les objectifs : baisser de 65 % les émissions de gaz à effet de serre d'ici 2033, atteindre 100 % d'énergies renouvelables au plus tard en 2060, sortir progressivement du nucléaire.",
+    "Les outils : un conseil à la planification écologique, des « écorégions » dessinées selon les bassins versants, et une conscription citoyenne écologique de neuf mois, payée au Smic, pour les moins de 25 ans.",
+    "Notre argument : le marché n'organise pas seul une transition de trente ans. Il faut un plan, des objectifs datés et des filières relocalisées. C'est aussi de l'emploi qui ne se délocalise pas.",
+    "L'objection : « sortir du nucléaire, c'est irréaliste ». La réponse du programme : la sortie est progressive, et l'échéance du 100 % renouvelable a été repoussée de 2050 à 2060 pour tenir compte du rythme réel."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "Public Sénat : l'analyse",
+     "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme"
+    }
+   ]
+  },
+  {
+   "icone": "💶",
+   "couleur": "255,159,10",
+   "titre": "Salaires et vie chère",
+   "sous": "Smic à 1 700 € net, prix bloqués",
+   "texte": [
+    "Les mesures : Smic porté immédiatement à 1 700 € net par mois. Point d'indice des fonctionnaires et APL revalorisés de 10 %.",
+    "Contre la vie chère : blocage des prix des produits de première nécessité. Écart de salaire limité de 1 à 20 dans chaque entreprise.",
+    "Pour les jeunes : une garantie d'autonomie au niveau du seuil de pauvreté (1 337 € par mois) pour les jeunes détachés du foyer fiscal de leurs parents.",
+    "Notre argument : un salarié au Smic dépense presque tout ce qu'il gagne, près de chez lui. Augmenter les bas salaires, c'est remplir les carnets de commandes des commerces et des artisans.",
+    "L'objection : « les petites entreprises ne pourront pas payer ». C'est la vraie question, et le chiffrage attendu début 2027 devra y répondre précisément. L'écart de 1 à 20 pousse déjà à partager la hausse en haut de l'échelle."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
+    }
+   ]
+  },
+  {
+   "icone": "⏳",
+   "couleur": "30,150,215",
+   "titre": "La retraite à 60 ans",
+   "sous": "Abroger la réforme, en deux étapes",
+   "texte": [
+    "Les mesures : abroger la réforme qui a porté l'âge légal à 64 ans. Retour d'abord à 62 ans, puis droit à la retraite à 60 ans à taux plein pour 40 annuités de cotisation.",
+    "Le financement prévu : supprimer les avantages fiscaux de la retraite par capitalisation pour financer la répartition, et créer une cotisation sociale élargie qui met à contribution les revenus du capital.",
+    "Notre argument : les années de vie en bonne santé ne sont pas les mêmes pour un cadre et pour un ouvrier. Reculer l'âge légal fait d'abord travailler plus longtemps ceux qui ont commencé tôt.",
+    "L'objection : « c'est impayable ». Le calendrier en deux étapes est plus progressif qu'en 2022, justement pour cela. Le coût de l'étape à 60 ans n'est pas encore publié : il est attendu avec le chiffrage de début 2027."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "Public Sénat : l'analyse",
+     "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme"
+    }
+   ]
+  },
+  {
+   "icone": "⚖️",
+   "couleur": "226,74,134",
+   "titre": "Partager les richesses",
+   "sous": "ISF, 14 tranches, héritage maximal",
+   "texte": [
+    "Les mesures : rétablir un ISF avec un volet climatique, passer l'impôt sur le revenu à 14 tranches pour le rendre plus progressif, supprimer la flat tax sur les revenus du capital.",
+    "Sur les très grandes fortunes : conserver la taxe Zucman sur les très hauts patrimoines et fixer un héritage maximal à 12 millions d'euros.",
+    "Sur les entreprises : pas d'aides publiques sans contreparties écologiques et sociales, ni sans engagements sur les objectifs du plan.",
+    "Notre argument : avec 14 tranches, l'impôt monte en pente douce au lieu de sauter par paliers. Le but est de demander plus aux très hauts revenus, pas aux classes moyennes.",
+    "L'objection : « les riches partiront ». Un héritage plafonné à 12 millions ne concerne qu'une infime minorité de successions. Sur l'exil fiscal, l'objection mérite une réponse chiffrée : nous l'attendons du chiffrage de début 2027."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
+    }
+   ]
+  },
+  {
+   "icone": "📈",
+   "couleur": "255,196,0",
+   "titre": "La dette, sans austérité",
+   "sous": "La BCE plutôt que les coupes",
+   "texte": [
+    "Le point de départ : fin 2024, la dette publique atteignait 3 305 milliards d'euros, soit 113 % du PIB (Insee).",
+    "Les mesures : geler la part de la dette française détenue par la Banque centrale européenne. Lui interdire de revendre sur les marchés la dette des États qu'elle détient.",
+    "La proposition européenne : modifier le traité et le statut de la BCE pour qu'elle puisse acheter de la dette publique directement, sans passer par les banques privées.",
+    "Notre argument : couper dans les dépenses freine l'activité, donc les recettes, et la dette ne baisse pas. Mieux vaut relancer par les salaires et l'investissement écologique.",
+    "L'objection : « les marchés sanctionneront la France ». C'est le risque le plus sérieux. Le programme assume une confrontation avec les institutions européennes, et il devra montrer dans son chiffrage comment il tient ce bras de fer."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
+    },
     {
      "titre": "Insee : comptes publics",
      "url": "https://www.insee.fr/fr/statistiques/serie/001694257"
+    }
+   ]
+  },
+  {
+   "icone": "🏛️",
+   "couleur": "130,96,176",
+   "titre": "La 6e République",
+   "sous": "Une constituante par référendum",
+   "texte": [
+    "La méthode : convoquer un référendum (article 11 de la Constitution) pour élire une Assemblée constituante, chargée d'écrire une nouvelle Constitution.",
+    "Les règles proposées : Assemblée nationale élue à la proportionnelle, suppression des « votes forcés » comme le 49.3, débat obligatoire sur toute pétition de plus de 500 000 signatures.",
+    "Le vote : droit de vote à 16 ans, reconnaissance du vote blanc et vote obligatoire.",
+    "Notre argument : la 5e République concentre les pouvoirs entre les mains d'une seule personne. Une loi peut passer sans vote des députés. Changer la règle du jeu, c'est rendre la décision aux citoyens.",
+    "L'objection : « ce n'est pas la priorité des Français ». C'est pourtant la condition du reste : sans proportionnelle ni fin du 49.3, une réforme comme celle des retraites peut encore passer sans majorité."
+   ],
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
     },
     {
-     "titre": "Crésus : Dette, déficits, faillite",
-     "url": "https://www.youtube.com/watch?v=lx9JGfPlICQ"
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
     }
-   ],
-   "couleur": "255,159,10",
-   "icone": "📈"
+   ]
   },
   {
+   "icone": "🕊️",
+   "couleur": "77,163,255",
+   "titre": "La paix et le non-alignement",
+   "sous": "ONU, Otan, Ukraine, Palestine",
    "texte": [
-    "Chaque automne, le gouvernement dépose deux textes : le projet de loi de finances (impôts, ministères) et celui de la Sécurité sociale (santé, retraites, famille).",
-    "Le Parlement a 70 jours pour voter la loi de finances (50 pour la Sécu). Sinon, le gouvernement peut l'appliquer par ordonnance.",
-    "L'article 49.3 permet d'adopter un texte sans vote, sauf si une motion de censure fait tomber le gouvernement.",
-    "Le Conseil constitutionnel peut censurer des articles. Le Haut Conseil des finances publiques donne son avis sur la crédibilité des prévisions."
+    "La ligne : une France non alignée, qui « prend la tête du camp de la paix » et renforce l'ONU.",
+    "Les mesures : retrait immédiat du commandement intégré de l'Otan, puis de l'organisation par étapes. Refus de consacrer 5 % du PIB à la défense comme le demandent les États-Unis.",
+    "Ukraine : agir pour un cadre diplomatique qui obtienne un cessez-le-feu, le retrait des troupes russes et des garanties de sécurité collective.",
+    "Palestine : défendre la souveraineté de l'État de Palestine sur les territoires occupés depuis 1967, et faire appliquer le mandat d'arrêt visant Benyamin Netanyahou.",
+    "Notre argument : « les droits des peuples doivent s'appliquer en Ukraine comme en Palestine ». Une même règle pour tous, c'est ce qui rend la voix de la France crédible."
    ],
-   "sous": "Qui le prépare, qui le vote",
-   "titre": "Le budget de l'État",
    "liens": [
     {
-     "titre": "vie-publique.fr : la loi de finances",
-     "url": "https://www.vie-publique.fr/fiches/21887-quest-ce-quune-loi-de-finances"
-    }
-   ],
-   "couleur": "10,132,255",
-   "icone": "📄"
-  },
-  {
-   "texte": [
-    "Couper 1 € de dépense publique fait aussi baisser l'activité. L'ampleur de cette baisse s'appelle le multiplicateur budgétaire.",
-    "Le gouvernement retient environ 0,5. En 2013, le FMI (étude d'Olivier Blanchard) a reconnu qu'en crise, il dépassait souvent 1.",
-    "Grèce 2010-2013 : malgré l'austérité, le déficit n'a presque pas baissé et le PIB a chuté d'environ 25 %.",
-    "Toutes les économies ne pèsent pas pareil : reculer l'âge de départ freine peu la croissance, couper l'investissement la freine beaucoup."
-   ],
-   "sous": "Le multiplicateur budgétaire",
-   "titre": "Austérité et croissance",
-   "liens": [
-    {
-     "titre": "Crésus : Dette, déficits, faillite",
-     "url": "https://www.youtube.com/watch?v=lx9JGfPlICQ"
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
     },
     {
-     "titre": "Crésus : Une France en faillite avant 2027 ?",
-     "url": "https://www.youtube.com/watch?v=WsgeYWlNJzA"
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
     }
-   ],
-   "couleur": "255,69,58",
-   "icone": "⚠️"
+   ]
   },
   {
+   "icone": "🎓",
+   "couleur": "0,160,200",
+   "titre": "Jeunesse et nouveaux droits",
+   "sous": "Autonomie, santé mentale, égalité",
    "texte": [
-    "Système par répartition : les cotisations des actifs d'aujourd'hui paient les pensions des retraités d'aujourd'hui. Elles représentent près de 14 % du PIB.",
-    "La réforme de 2023 a reporté l'âge légal de 62 à 64 ans. Elle reste au cœur de la campagne : LFI et le PCF proposent 60 ans, d'autres veulent aller au-delà de 64.",
-    "Retraite par points (proposée par Renaissance) : chaque euro cotisé donne des points, et la pension dépend de toute la carrière.",
-    "Les leviers sont toujours les mêmes : l'âge de départ, le niveau des pensions, les cotisations, ou le déficit."
+    "Pour les jeunes : garantie d'autonomie de 1 337 € par mois, repas à un euro mieux financés, logements sociaux pour étudiants et jeunes travailleurs, séances de psychothérapie remboursées pour les moins de 26 ans.",
+    "Pour les familles : un statut de « famille monoparentale » qui ouvre droit à des réductions dans les transports et les services publics.",
+    "Contre les discriminations : un plan d'un milliard d'euros contre l'islamophobie, l'antisémitisme et toutes les formes de racisme.",
+    "Sur l'intelligence artificielle : une autorité nationale qui autorise la mise sur le marché des systèmes à haut risque, et un contrôle humain des décisions prises par algorithme au travail.",
+    "Notre argument : un jeune qui fait la queue à l'aide alimentaire ne peut ni étudier ni se former correctement. L'autonomie n'est pas une dépense, c'est un investissement dans les années qui suivent."
    ],
-   "sous": "Répartition, âge légal, points",
-   "titre": "Les retraites",
    "liens": [
     {
-     "titre": "Crésus : le programme des centristes",
-     "url": "https://www.youtube.com/watch?v=AtaAHCl5VF0"
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
     },
     {
-     "titre": "info-retraite.fr",
-     "url": "https://www.info-retraite.fr"
-    }
-   ],
-   "couleur": "48,209,88",
-   "icone": "⏳"
-  },
-  {
-   "texte": [
-    "Politique de l'offre : baisser les impôts et les coûts des entreprises pour qu'elles investissent et embauchent (baisse des impôts de production, CICE).",
-    "Politique de la demande : augmenter les revenus (salaires, aides) pour soutenir la consommation (hausse du SMIC, blocage des prix).",
-    "Exemple : le CICE a coûté environ 20 Md€ par an. Les évaluations publiques lui attribuent environ 100 000 emplois, jugés peu au regard du coût.",
-    "La plupart des programmes mélangent les deux. La vraie question est leur financement."
-   ],
-   "sous": "Deux façons de relancer l'économie",
-   "titre": "Offre ou demande ?",
-   "liens": [
-    {
-     "titre": "France Stratégie : évaluation du CICE",
-     "url": "https://www.strategie.gouv.fr/publications/evaluation-credit-dimpot-competitivite-lemploi-synthese-travaux-dapprofondissement"
-    }
-   ],
-   "couleur": "191,90,242",
-   "icone": "💳"
-  },
-  {
-   "texte": [
-    "La Banque centrale européenne fixe les taux directeurs de la zone euro. Elle est indépendante : aucun gouvernement ne peut lui donner d'ordre.",
-    "La France emprunte sur les marchés. Si les prêteurs doutent, ils exigent des taux plus élevés, et la charge de la dette augmente.",
-    "Depuis 2022, la BCE peut acheter la dette d'un pays attaqué sur les marchés, mais sous conditions de discipline budgétaire.",
-    "D'où un débat central : un programme qui creuse fortement le déficit doit négocier avec Bruxelles et Francfort, ou entrer en conflit avec eux."
-   ],
-   "sous": "Pourquoi Francfort compte autant",
-   "titre": "L'euro, la BCE et les taux",
-   "liens": [
-    {
-     "titre": "BCE : notre politique monétaire",
-     "url": "https://www.ecb.europa.eu/mopo/html/index.fr.html"
+     "titre": "LCP : ce qui change",
+     "url": "https://lcp.fr/actualites/presidentielle-2027-ce-qui-change-dans-le-nouveau-programme-de-jean-luc-melenchon-444841"
     },
     {
-     "titre": "Crésus : le programme de LFI",
-     "url": "https://www.youtube.com/watch?v=_PcDNjqiYtk"
+     "titre": "Public Sénat : l'analyse",
+     "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme"
     }
+   ]
+  },
+  {
+   "icone": "💬",
+   "couleur": "142,142,147",
+   "titre": "Répondre aux objections",
+   "sous": "L'argumentaire en cinq réponses",
+   "texte": [
+    "« C'est trop cher. » Les recettes sont écrites : ISF climatique, 14 tranches, fin de la flat tax, taxe sur les très hauts patrimoines, cotisation sur les revenus du capital. Le chiffrage complet arrive début 2027 : jugeons sur pièces.",
+    "« Il ne peut pas gagner. » Mélenchon est passé de 11 % en 2012 à près de 22 % en 2022. Cette année-là, il a manqué le second tour d'environ 420 000 voix.",
+    "« L'Europe l'en empêchera. » Le programme prévoit d'appliquer ses mesures au niveau national dans tous les cas, avec un moratoire voté par le Parlement sur les règles qui bloquent.",
+    "« C'est toujours le même programme. » Oui, et c'est sa force : les mêmes engagements depuis dix ans, mis à jour à chaque édition. 238 mesures sont nouvelles en 2027.",
+    "La bonne méthode : ne pas nier les objections. Les reprendre une par une, avec la mesure exacte et sa source. Un argument vérifiable convainc mieux qu'un slogan."
    ],
-   "couleur": "100,210,255",
-   "icone": "🏦"
+   "liens": [
+    {
+     "titre": "Le programme en ligne",
+     "url": "https://melenchon2027.fr/programme/livre"
+    },
+    {
+     "titre": "Public Sénat : l'analyse",
+     "url": "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-avec-la-nouvelle-france-jean-luc-melenchon-fait-de-lecologie-la-cle-de-voute-de-son-programme"
+    }
+   ]
   },
   {
    "texte": [
-    "1er tour le dimanche 18 avril 2027, 2nd tour le 2 mai entre les deux premiers, sauf si l'un a plus de 50 % dès le 1er tour.",
+    "1er tour le dimanche 18 avril 2027, 2nd tour le 2 mai entre les deux premiers, sauf si l'un a plus de 50 % dès le 1er tour.",
     "Pour se présenter, il faut 500 parrainages d'élus (maires, parlementaires…) venant d'au moins 30 départements.",
     "Inscription sur les listes électorales : en ligne jusqu'au 10 mars 2027, en mairie jusqu'au 12 mars.",
     "Absent le jour du vote ? La procuration se demande en ligne sur maprocuration.gouv.fr, puis se valide au commissariat ou à la gendarmerie."
@@ -159,28 +284,10 @@
    ],
    "couleur": "0,85,164",
    "icone": "🗳️"
-  },
-  {
-   "texte": [
-    "Gauche radicale et écologiste : LFI (Mélenchon), Les Écologistes (Tondelier), PCF (Roussel), Lutte ouvrière (Arthaud).",
-    "Gauche sociale-démocrate : Place publique (Glucksmann), PS (Hollande ou un autre candidat).",
-    "Bloc central : Renaissance (Attal), Horizons (Philippe), MoDem.",
-    "Droite : Les Républicains (Retailleau). Droite nationaliste, souvent dite extrême droite : RN (Le Pen ou Bardella), Reconquête (Zemmour), Debout la France (Dupont-Aignan)."
-   ],
-   "sous": "Les grands blocs de 2027",
-   "titre": "Gauche, centre, droite",
-   "liens": [
-    {
-     "titre": "Sondax : tous les candidats",
-     "url": "https://sondax.fr/candidats/"
-    }
-   ],
-   "couleur": "142,142,147",
-   "icone": "👥"
   }
  ],
  "NOTE_CRESUS": "Crésus est un vidéaste finance. Il a annoncé voter Mélenchon « par calcul » (pour hâter une crise budgétaire), pas par adhésion : ses analyses restent une opinion.",
- "MAJ": "17 octobre 2026",
+ "MAJ": "20 novembre 2026",
  "medias": {
   "francebleu.fr": [
    "ici",
@@ -188,7 +295,7 @@
   ],
   "mediapart.fr": [
    "Mediapart",
-   "independant"
+   "gauche"
   ],
   "franceculture.fr": [
    "France Culture",
@@ -236,7 +343,7 @@
   ],
   "basta.media": [
    "Basta!",
-   "independant"
+   "gauche"
   ],
   "afp.com": [
    "AFP",
@@ -276,28 +383,64 @@
   ],
   "reporterre.net": [
    "Reporterre",
-   "independant"
+   "gauche"
   ],
   "politis.fr": [
    "Politis",
-   "independant"
+   "gauche"
+  ],
+  "linsoumission.fr": [
+   "L'Insoumission",
+   "lfi"
+  ],
+  "lemediatv.fr": [
+   "Le Média",
+   "gauche"
+  ],
+  "blast-info.fr": [
+   "Blast",
+   "gauche"
+  ],
+  "humanite.fr": [
+   "L'Humanité",
+   "gauche"
+  ],
+  "streetpress.com": [
+   "StreetPress",
+   "gauche"
+  ],
+  "regards.fr": [
+   "Regards",
+   "gauche"
+  ],
+  "lvsl.fr": [
+   "Le Vent Se Lève",
+   "gauche"
+  ],
+  "frustrationmagazine.fr": [
+   "Frustration",
+   "gauche"
+  ],
+  "contretemps.eu": [
+   "Contretemps",
+   "gauche"
   ]
  },
  "programmes": {
   "melenchon": {
-   "site": "https://melenchon2027.fr",
+   "site": "https://melenchon2027.fr/programme/livre",
    "points": [
-    "Salaires : SMIC à 1 600 € net, hausse d'environ 10 % du point d'indice des fonctionnaires.",
-    "Retraites : départ à 60 ans avec 40 annuités, petites pensions relevées au niveau du SMIC.",
-    "Vie chère : blocage des prix de première nécessité, premiers volumes d'eau et d'énergie gratuits, garantie d'autonomie pour les jeunes.",
-    "Écologie et logement : plan de bifurcation écologique (≈ 200 Md€ sur le mandat), 200 000 logements publics par an.",
-    "Financement : ISF climatique, impôt plus progressif, héritages plafonnés (au-delà de 12 M€ taxés à 100 %)."
+    "Écologie : règle verte dans la Constitution, −65 % d'émissions d'ici 2033, 100 % renouvelables au plus tard en 2060.",
+    "Salaires : Smic à 1 700 € net, point d'indice et APL +10 %, blocage des prix de première nécessité.",
+    "Retraites : abrogation de la réforme, retour à 62 ans puis à 60 ans à taux plein pour 40 annuités.",
+    "Fiscalité : ISF climatique, impôt à 14 tranches, fin de la flat tax, héritage maximal de 12 M€.",
+    "Institutions : 6e République par une constituante, proportionnelle, fin du 49.3."
    ],
    "video": {
     "titre": "Et si on appliquait le programme de LFI ?",
     "url": "https://www.youtube.com/watch?v=_PcDNjqiYtk"
    },
-   "ligne": "Gauche radicale. Programme « L'Avenir en commun » : redistribution et planification écologique.",
+   "ligne": "La France insoumise. Programme « L'Avenir en commun » (5e édition, 6 novembre 2026) : bifurcation écologique, partage des richesses, 6e République.",
    "cresus": "Selon Crésus : près de 300 Md€ de dépenses par an pour environ 180 Md€ de recettes. Il prévoit un bras de fer avec la BCE et les marchés sur le déficit.",
    "video2": {
     "titre": "Pourquoi je vais voter pour Jean-Luc Mélenchon",
