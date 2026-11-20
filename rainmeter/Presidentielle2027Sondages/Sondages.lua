@@ -1,7 +1,6 @@
 -- Presidentielle 2027 : sondages pour Rainmeter.
 -- Lit /api/sondages?format=tsv (meme moyenne que le site et les stories :
--- dernier sondage de chaque institut, 4 instituts au moins, 35 % du poids au plus
--- chacun, corrige des biais d'institut)
+-- les 2 sondages les plus recents, poids egal, corriges des biais d'institut)
 -- et remplit les meters du skin. Aucun calcul de moyenne ici.
 -- Fichier volontairement en ASCII : les accents viennent des donnees et du .ini.
 

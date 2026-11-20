@@ -73,7 +73,7 @@ export async function GET(req, { params }) {
   let corps, sous, instituts;
   if (t === 1) {
     sous = mode === 'dernier' ? `Intentions de vote : ${r.sous}.`
-      : `Dernier sondage de chaque institut, au moins 4 instituts, aucun au-dessus de 35 %, corrigé des biais d'institut. Flèches : sur ${REGLAGES.tendance} j.`;
+      : `Moyenne des ${REGLAGES.nb} sondages les plus récents, corrigée des biais d'institut. Flèches : évolution sur ${REGLAGES.tendance} j.`;
     instituts = r.instituts.premierTour;
     const lignes = await Promise.all(r.premierTour.slice(0, 8).map(async (c) => ({ ...c, img: await imagePhoto(c.photo) })));
     corps = (
@@ -105,7 +105,7 @@ export async function GET(req, { params }) {
     );
   } else {
     sous = mode === 'dernier' ? 'Intentions de vote au second tour, dernier sondage publié.'
-      : `Duels testés : dernier sondage de chaque institut, aucun au-dessus de 35 %, corrigé des biais d'institut, en suffrages exprimés.`;
+      : `Duels testés : moyenne des ${REGLAGES.nb} sondages les plus récents, corrigée des biais d'institut, en suffrages exprimés.`;
     instituts = r.instituts.secondTour;
     const duels = await Promise.all(r.secondTour.slice(0, 4).map(async (d) => ({
       ...d, ig: await imagePhoto(d.g.photo), id: await imagePhoto(d.d.photo),
@@ -198,7 +198,7 @@ export async function GET(req, { params }) {
               : "Données Sondax/Wikipédia (CC BY-SA 4.0), data.gouv.fr, notice sur commission-des-sondages.fr."}
           </div>
           <div style={{ display: 'flex', fontSize: 21, color: MUET, marginTop: 8, lineHeight: 1.35 }}>
-            Un sondage est une photographie de l'opinion, pas une prévision (marge de 1 à 3 points).
+            Un sondage est une photographie de l'opinion, pas une prévision (marge de 1 à 3 points). Site engagé, non officiel : soutien à L'Avenir en commun.
           </div>
           {pseudo ? <div style={{ display: 'flex', justifyContent: 'center', fontSize: 30, fontWeight: 600, marginTop: 24 }}>{pseudo}</div> : null}
         </div>

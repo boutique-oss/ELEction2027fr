@@ -127,9 +127,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* ===================================================================
    v3 (24 oct. 2026) : décomptes, cartes d'actu, lisibilité renforcée
    =================================================================== */
-:root { --t2: #545458; --t3: #6e6e73; --carte2: #f2f2f6; --indep: #7a4fd6; --public: #0a6ad8; --nonluc: #1f9a52; }
+:root { --t2: #545458; --t3: #6e6e73; --carte2: #f2f2f6; --indep: #7a4fd6; --public: #0a6ad8; --nonluc: #1f9a52; --lfi: #c41f3e; --gauche: #d6336c; }
 @media (prefers-color-scheme: dark) {
-  :root { --t2: #c7c7cc; --t3: #98989f; --carte2: #26262b; --indep: #b78cff; --public: #4da3ff; --nonluc: #45c67a; }
+  :root { --t2: #c7c7cc; --t3: #98989f; --carte2: #26262b; --indep: #b78cff; --public: #4da3ff; --nonluc: #45c67a; --lfi: #ff5a76; --gauche: #ff8fb1; }
 }
 body { font-size: 16px; line-height: 1.45; }
 .ttl b { font-size: 19px; line-height: 1.25; }
@@ -171,6 +171,7 @@ body { font-size: 16px; line-height: 1.45; }
 .legende { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
 .legende i, .mini i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
 .mini i { width: 7px; height: 7px; margin-right: 5px; }
+i.f-lfi { background: var(--lfi); } i.f-gauche { background: var(--gauche); }
 i.f-independant { background: var(--indep); } i.f-public { background: var(--public); } i.f-nonlucratif { background: var(--nonluc); }
 .cartes { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
 .carte { display: block; background: var(--carte); border: 1px solid var(--bord); border-radius: 16px; padding: 13px 14px; }
@@ -180,6 +181,8 @@ i.f-independant { background: var(--indep); } i.f-public { background: var(--pub
 .c1 .media { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .c1 .quand { margin-left: auto; color: var(--t3); flex: none; }
 .badge { flex: none; padding: 3px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; letter-spacing: .2px; }
+.badge.f-lfi { background: color-mix(in srgb, var(--lfi) 16%, transparent); color: var(--lfi); }
+.badge.f-gauche { background: color-mix(in srgb, var(--gauche) 16%, transparent); color: var(--gauche); }
 .badge.f-independant { background: color-mix(in srgb, var(--indep) 16%, transparent); color: var(--indep); }
 .badge.f-public { background: color-mix(in srgb, var(--public) 16%, transparent); color: var(--public); }
 .badge.f-nonlucratif { background: color-mix(in srgb, var(--nonluc) 16%, transparent); color: var(--nonluc); }
@@ -207,3 +210,8 @@ i.f-independant { background: var(--indep); } i.f-public { background: var(--pub
   .jalons { font-size: 11px; gap: 2px; }
   .dc .n { font-size: 36px; }
 }
+
+/* bandeau « site engagé » */
+.engage { margin: 10px 0 0; padding: 8px 12px; border-radius: 12px; font-size: 12px; line-height: 1.4; color: var(--t2);
+  background: color-mix(in srgb, var(--lfi) 12%, transparent); border: 1px solid color-mix(in srgb, var(--lfi) 35%, transparent); }
+.engage b { color: var(--lfi); }

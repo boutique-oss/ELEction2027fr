@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const inter = localFont({
@@ -13,7 +14,7 @@ const inter = localFont({
 
 export const metadata = {
   title: 'Présidentielle 2027',
-  description: 'Sondages (moyenne pondérée), actu filtrée, manifs à Poitiers et repères pour comprendre la présidentielle 2027.',
+  description: "Site engagé, non officiel, en soutien à L'Avenir en commun : sondages, actu de la campagne de Jean-Luc Mélenchon, manifs et fiches sur le programme.",
   manifest: '/manifest.webmanifest',
   appleWebApp: { capable: true, title: 'Présidentielle 27', statusBarStyle: 'black-translucent' },
 };
@@ -31,7 +32,11 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* Fréquentation (Vercel Web Analytics) : pages vues, pays, appareil, site d'origine. Sans cookie, sans identité. */}
+        <Analytics />
+      </body>
     </html>
   );
 }
